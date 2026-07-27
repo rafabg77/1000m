@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Plan de entrenamiento 1000m para oposición Escala Básica CNP - Adaptación automática a rendimiento">
+<meta name="theme-color" content="#0B1F3D">
 <title>Plan de Pista · 1.000 m · Escala Básica CNP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,6 +61,7 @@
   .profile-card.rafa::after{background:linear-gradient(135deg,rgba(26,92,138,0.25),transparent);}
   .profile-card.emilio::after{background:linear-gradient(135deg,rgba(122,31,43,0.25),transparent);}
   .profile-card:hover{border-color:var(--gold-bright);transform:translateY(-4px);box-shadow:0 14px 44px rgba(0,0,0,0.55);}
+  .profile-card:focus-visible{outline:3px solid var(--gold-bright);outline-offset:2px;}
   .profile-card:hover::after{opacity:1;}
   .profile-avatar{
     width:62px;height:62px;border-radius:50%;margin:0 auto 12px;
@@ -90,6 +93,7 @@
   .profile-bar{
     background:rgba(0,0,0,0.32);border-bottom:1px solid rgba(212,175,55,0.18);
     padding:8px 24px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:2;
+    flex-wrap:wrap;gap:12px;
   }
   .profile-indicator{
     display:flex;align-items:center;gap:8px;font-family:'Oswald';font-size:12px;
@@ -105,6 +109,7 @@
     border-radius:3px;cursor:pointer;transition:all 0.15s;
   }
   .btn-switch:hover{background:rgba(212,175,55,0.14);border-color:var(--gold-bright);color:var(--gold-bright);}
+  .btn-switch:focus-visible{outline:2px solid var(--gold-bright);}
   .header-inner{padding:22px 24px 18px;}
   .lane-tag{
     display:inline-flex;align-items:center;gap:8px;background:var(--granate);color:var(--cream);
@@ -128,15 +133,16 @@
 
   main{max-width:980px;margin:0 auto;padding:28px 20px 0;}
   .config-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:20px 22px;margin-bottom:26px;border-top:4px solid var(--granate);}
-  .config-card h2{font-size:16px;color:var(--navy);margin:0 0 4px;}
+  .config-card h2{font-size:16px;color:var(--navy);margin:0 0 4px;font-weight:600;}
   .config-card .config-sub{font-size:13px;color:var(--gray);margin:0 0 16px;}
   .config-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
-  .field label{display:block;font-size:11.5px;font-family:'Oswald';letter-spacing:0.04em;color:var(--navy);margin-bottom:5px;}
+  .field label{display:block;font-size:11.5px;font-family:'Oswald';letter-spacing:0.04em;color:var(--navy);margin-bottom:5px;font-weight:600;}
   .field input{width:100%;padding:9px 10px;border:1.5px solid var(--line);border-radius:4px;font-family:'Roboto Mono';font-size:14px;background:#fcfbf8;}
   .field input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 2px rgba(212,175,55,0.25);}
   .field .hint{font-size:11px;color:var(--gray);margin-top:4px;}
   .config-actions{margin-top:18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
-  button.btn{font-family:'Oswald';font-size:13px;letter-spacing:0.03em;padding:10px 18px;border-radius:4px;border:none;cursor:pointer;font-weight:600;}
+  button.btn{font-family:'Oswald';font-size:13px;letter-spacing:0.03em;padding:10px 18px;border-radius:4px;border:none;cursor:pointer;font-weight:600;transition:all 0.2s;}
+  button.btn:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
   .btn-gen{background:var(--granate);color:var(--cream);}
   .btn-gen:hover{background:var(--granate-light);}
   .btn-save{background:var(--navy);color:var(--cream);}
@@ -155,7 +161,8 @@
   .summary-card .item{font-size:13px;}
   .summary-card .item .big{font-family:'Roboto Mono';font-weight:700;font-size:19px;color:var(--gold-bright);display:block;}
   .summary-card .item .lbl{font-size:10.5px;opacity:0.75;letter-spacing:0.05em;text-transform:uppercase;}
-  .curve-badge{display:flex;align-items:flex-start;gap:9px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--gray);border-radius:6px;padding:11px 14px;margin-bottom:24px;font-size:12.5px;line-height:1.5;color:var(--ink);}
+  
+  .curve-badge{display:flex;align-items:flex-start;gap:9px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--gray);border-radius:6px;padding:11px 14px;margin-bottom:24px;font-size:12px;color:var(--navy);}
   .curve-badge.curve-on{border-left-color:var(--ok);}
   .curve-badge.curve-off{border-left-color:var(--gold);}
   .curve-badge.anchor-on{border-left-color:var(--speed);background:var(--speed-bg);}
@@ -163,16 +170,16 @@
   .curve-badge.curve-on .curve-dot{background:var(--ok);}
   .curve-badge.curve-off .curve-dot{background:var(--gold);}
   .curve-badge.anchor-on .curve-dot{background:var(--speed);}
-  .curve-badge strong{font-family:'Oswald';letter-spacing:0.02em;}
+  .curve-badge strong{font-family:'Oswald';letter-spacing:0.02em;font-weight:600;}
 
   .fase-block{margin-bottom:34px;}
   .fase-head{display:flex;align-items:baseline;gap:12px;margin-bottom:10px;border-bottom:2px solid var(--navy);padding-bottom:8px;}
   .fase-num{font-family:'Oswald';font-size:32px;font-weight:700;color:var(--granate);line-height:1;}
-  .fase-head h2{font-size:16px;margin:0;color:var(--navy);}
+  .fase-head h2{font-size:16px;margin:0;color:var(--navy);font-weight:600;}
   .fase-head .fase-desc{font-size:12px;color:var(--gray);margin:0;font-family:'Inter';}
 
   table.weeks{width:100%;border-collapse:collapse;background:#fff;}
-  table.weeks th{text-align:left;font-family:'Oswald';font-size:10.5px;letter-spacing:0.05em;color:var(--navy);background:#ECE7DA;padding:9px 8px;border-bottom:2px solid var(--navy);white-space:nowrap;}
+  table.weeks th{text-align:left;font-family:'Oswald';font-size:10.5px;letter-spacing:0.05em;color:var(--navy);background:#ECE7DA;padding:9px 8px;border-bottom:2px solid var(--navy);white-space:nowrap;font-weight:600;}
   table.weeks td{padding:9px 8px;border-bottom:1px solid var(--line);font-size:13px;vertical-align:middle;}
   table.weeks tr.recalibrated td{background:#FBF6E6;}
   .wk-date{font-family:'Roboto Mono';font-weight:700;color:var(--navy);white-space:nowrap;font-size:12px;}
@@ -185,38 +192,41 @@
   .score-good{background:#E4F0E8;color:var(--ok);}
   .score-mid{background:#FBF1DC;color:#9A6E1E;}
   .score-low{background:#F6E7E3;color:var(--granate);}
-  .int-tag{display:inline-block;font-size:9px;font-family:'Oswald';letter-spacing:0.04em;padding:1px 5px;border-radius:2px;margin-left:4px;vertical-align:middle;}
+  .int-tag{display:inline-block;font-size:9px;font-family:'Oswald';letter-spacing:0.04em;padding:1px 5px;border-radius:2px;margin-left:4px;vertical-align:middle;font-weight:600;}
   .int-examen{background:#E9EEF5;color:var(--navy);}
   .int-faster{background:var(--speed-bg);color:var(--speed);}
   .int-easier{background:#F0F5EC;color:var(--ok);}
   .int-base{background:#F5EFE0;color:#7A5C1E;}
   input.time-input{font-family:'Roboto Mono';font-size:13.5px;width:82px;padding:6px 7px;border:1.5px solid var(--line);border-radius:4px;text-align:center;background:#fff;}
   input.time-input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 2px rgba(212,175,55,0.25);}
-  .status-tag{font-size:10.5px;font-family:'Oswald';padding:3px 7px;border-radius:3px;letter-spacing:0.03em;white-space:nowrap;}
+  .status-tag{font-size:10.5px;font-family:'Oswald';padding:3px 7px;border-radius:3px;letter-spacing:0.03em;white-space:nowrap;font-weight:600;}
   .status-pending{background:#EDEAE0;color:var(--gray);}
   .status-skipped{background:#EDEAE0;color:var(--gray);font-style:italic;}
-  .btn-skip{display:block;margin-top:5px;font-family:'Oswald';font-size:9.5px;letter-spacing:0.03em;padding:2px 7px;border-radius:3px;border:1px solid var(--line);background:#fff;color:var(--gray);cursor:pointer;}
+  .btn-skip{display:block;margin-top:5px;font-family:'Oswald';font-size:9.5px;letter-spacing:0.03em;padding:2px 7px;border-radius:3px;border:1px solid var(--line);background:#fff;color:var(--gray);cursor:pointer;transition:all 0.15s;font-weight:600;}
   .btn-skip:hover{border-color:var(--granate);color:var(--granate);}
+  .btn-skip:focus-visible{outline:2px solid var(--granate);}
   .btn-skip.active{background:var(--granate);color:#fff;border-color:var(--granate);}
   .status-done-fast{background:#E4F0E8;color:var(--ok);}
   .status-done-slow{background:#F6E7E3;color:var(--granate);}
   .status-info{background:#E9EEF5;color:var(--navy);}
   .note-inline{font-size:11px;color:var(--gray);font-style:italic;}
-  .recalib-badge{display:inline-block;font-size:9px;font-family:'Oswald';letter-spacing:0.05em;padding:1px 5px;border-radius:3px;margin-left:5px;vertical-align:middle;}
+  .recalib-badge{display:inline-block;font-size:9px;font-family:'Oswald';letter-spacing:0.05em;padding:1px 5px;border-radius:3px;margin-left:5px;vertical-align:middle;font-weight:600;}
   .recalib-up{background:#E4F0E8;color:var(--ok);}
   .recalib-down{background:#F6E7E3;color:var(--granate);}
   .recalib-mid{background:#ECE7DA;color:#6E6A60;}
   .trend-arrow{font-size:20px;display:block;}
   .tip-row td{background:var(--tip-bg)!important;padding:0!important;border-bottom:2px solid var(--tip-border)!important;}
-  .tip-toggle{width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:8px 10px;font-family:'Oswald';font-size:11px;color:var(--ok);letter-spacing:0.04em;display:flex;align-items:center;gap:6px;}
+  .tip-toggle{width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:8px 10px;font-family:'Oswald';font-size:11px;color:var(--ok);letter-spacing:0.04em;display:flex;align-items:center;gap:8px;transition:background 0.15s;font-weight:600;}
   .tip-toggle:hover{background:rgba(60,122,78,0.07);}
+  .tip-toggle:focus-visible{outline:2px solid var(--ok);outline-offset:1px;}
   .tip-toggle .tip-arrow{transition:transform 0.2s;display:inline-block;font-style:normal;}
   .tip-toggle.open .tip-arrow{transform:rotate(90deg);}
   .tip-body{display:none;padding:10px 16px 14px;font-size:12px;color:#2E5A38;line-height:1.55;border-top:1px solid var(--tip-border);}
   .tip-body.visible{display:block;}
   .tip-body ul{margin:6px 0 0 0;padding-left:16px;}
   .tip-body li{margin-bottom:4px;}
-  .tip-body strong{color:var(--navy);}
+  .tip-body strong{color:var(--navy);font-weight:600;}
+  
   /* ===== EVOLUTION CHART ===== */
   .evo-chart-container{
     position:relative;background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);
@@ -239,37 +249,38 @@
     pointer-events:none;z-index:0;user-select:none;white-space:nowrap;
   }
   .evo-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px;position:relative;z-index:1;flex-wrap:wrap;}
-  .evo-title{font-family:'Oswald';color:var(--gold-bright);font-size:14px;letter-spacing:0.1em;text-transform:uppercase;}
+  .evo-title{font-family:'Oswald';color:var(--gold-bright);font-size:14px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;}
   .evo-sub{font-family:'Roboto Mono';font-size:11px;color:rgba(255,255,255,0.4);}
-  .evo-controls{display:flex;align-items:center;gap:10px;position:relative;z-index:1;}
+  .evo-controls{display:flex;align-items:center;gap:10px;position:relative;z-index:1;flex-wrap:wrap;}
   .evo-toggle{
     background:rgba(255,255,255,0.05);border:1px solid rgba(212,175,55,0.35);color:var(--cream);
     font-family:'Roboto Mono';font-size:10.5px;letter-spacing:0.04em;border-radius:20px;
-    padding:5px 12px;cursor:pointer;transition:all .18s;
+    padding:5px 12px;cursor:pointer;transition:all .18s;font-weight:600;
   }
   .evo-toggle:hover{background:rgba(212,175,55,0.15);border-color:var(--gold-bright);}
+  .evo-toggle:focus-visible{outline:2px solid var(--gold-bright);outline-offset:1px;}
   .evo-toggle.active{background:var(--gold);color:var(--navy-deep);font-weight:700;border-color:var(--gold);}
   .evo-legend{display:flex;gap:16px;flex-wrap:wrap;position:relative;z-index:1;margin:2px 0 12px;font-family:'Roboto Mono';font-size:10.5px;color:rgba(255,255,255,0.65);}
   .evo-legend span{display:inline-flex;align-items:center;gap:6px;}
   .evo-dot{width:9px;height:9px;border-radius:50%;display:inline-block;box-shadow:0 0 6px currentColor;}
-  .evo-canvas-wrap{position:relative;z-index:1;height:320px;}
-  .evo-canvas-wrap canvas{width:100% !important;height:100% !important;}
+  .evo-canvas-wrap{position:relative;z-index:1;height:320px;overflow:hidden;border-radius:6px;}
+  .evo-canvas-wrap canvas{width:100% !important;height:100% !important;display:block;}
   .evo-empty{
     position:relative;z-index:1;min-height:200px;display:flex;flex-direction:column;align-items:center;
     justify-content:center;gap:8px;text-align:center;padding:30px 10px;
   }
   .evo-empty-icon{font-size:30px;animation:evoBounce 1.6s ease-in-out infinite;}
   @keyframes evoBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
-  .evo-empty-title{font-family:'Oswald';color:var(--gold-bright);font-size:15px;letter-spacing:0.04em;}
+  .evo-empty-title{font-family:'Oswald';color:var(--gold-bright);font-size:15px;letter-spacing:0.04em;font-weight:600;}
   .evo-empty-sub{font-family:'Inter';color:rgba(255,255,255,0.55);font-size:12.5px;max-width:360px;}
   .intensity-legend{background:#fff;border:1px solid var(--line);border-radius:6px;padding:14px 18px;margin-bottom:20px;display:flex;gap:18px;flex-wrap:wrap;align-items:center;}
-  .intensity-legend .leg-title{font-family:'Oswald';font-size:12px;color:var(--navy);letter-spacing:0.05em;margin-right:6px;}
+  .intensity-legend .leg-title{font-family:'Oswald';font-size:12px;color:var(--navy);letter-spacing:0.05em;margin-right:6px;font-weight:600;}
   .leg-item{display:flex;align-items:center;gap:5px;font-size:11.5px;color:var(--gray);}
   .controls{display:flex;gap:10px;flex-wrap:wrap;margin:30px 0 10px;border-top:1px dashed var(--line);padding-top:20px;}
   footer.notes{max-width:980px;margin:36px auto 0;padding:0 20px 40px;font-size:13px;color:var(--gray);}
-  footer.notes h3{font-size:14px;color:var(--navy);margin-bottom:8px;}
+  footer.notes h3{font-size:14px;color:var(--navy);margin-bottom:8px;font-weight:600;}
   footer.notes ul{padding-left:18px;margin-top:6px;}
-  footer.notes li{margin-bottom:5px;}
+  footer.notes li{margin-bottom:5px;line-height:1.6;}
 
   @media(max-width:600px){
     table.weeks{font-size:11.5px;}
@@ -278,43 +289,45 @@
     .wk-desc{max-width:130px;}
     .profile-cards{flex-direction:column;align-items:center;}
     .profile-card{width:100%;max-width:280px;padding:20px 24px;}
-    .motivation-strip{gap:8px;}
+    .motivation-strip{gap:8px;font-size:10px;}
+    .profile-bar{flex-direction:column;align-items:flex-start;}
+    .evo-canvas-wrap{height:240px;}
   }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js" defer></script>
 </head>
 <body>
 
 <!-- OVERLAY DE SELECCION DE PERFIL -->
-<div id="profileOverlay">
+<div id="profileOverlay" role="dialog" aria-labelledby="overlayTitle" aria-modal="true">
   <div class="shield-wrap">
-    <svg width="70" height="78" viewBox="0 0 70 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="70" height="78" viewBox="0 0 70 78" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Escudo CNP">
       <path d="M35 2L3 13V40C3 57 19 70 35 76C51 70 67 57 67 40V13L35 2Z" fill="rgba(212,175,55,0.1)" stroke="#D4AF37" stroke-width="1.5"/>
       <path d="M35 11L11 21V40C11 53 23 63 35 68C47 63 59 53 59 40V21L35 11Z" fill="rgba(212,175,55,0.07)" stroke="rgba(212,175,55,0.45)" stroke-width="1"/>
       <text x="35" y="47" font-family="Georgia,serif" font-size="18" fill="#D4AF37" text-anchor="middle" font-weight="bold">CNP</text>
     </svg>
   </div>
-  <div class="overlay-title">Plan de Pista · <span>1.000 m</span></div>
+  <div class="overlay-title" id="overlayTitle">Plan de Pista · <span>1.000 m</span></div>
   <div class="overlay-sub">CUERPO NACIONAL DE POLICÍA · ESCALA BÁSICA · 2026</div>
 
   <div class="profile-cards">
-    <div class="profile-card rafa" onclick="selectProfile('Rafa')">
-      <div class="profile-avatar">R</div>
+    <button class="profile-card rafa" onclick="selectProfile('Rafa')" aria-label="Seleccionar perfil Rafa">
+      <div class="profile-avatar" aria-hidden="true">R</div>
       <div class="profile-name">RAFA</div>
       <div class="profile-badge">OPOSITOR CNP</div>
       <div class="profile-status" id="rafaStatus">Cargando...</div>
-    </div>
-    <div class="profile-card emilio" onclick="selectProfile('Emilio')">
-      <div class="profile-avatar">E</div>
+    </button>
+    <button class="profile-card emilio" onclick="selectProfile('Emilio')" aria-label="Seleccionar perfil Emilio">
+      <div class="profile-avatar" aria-hidden="true">E</div>
       <div class="profile-name">EMILIO</div>
       <div class="profile-badge">OPOSITOR CNP</div>
       <div class="profile-status" id="emilioStatus">Cargando...</div>
-    </div>
+    </button>
   </div>
 
   <div class="overlay-note">
-    Los datos de cada perfil se guardan automáticamente en la nube. Tú ves siempre la última versión de tus datos y de los de tu compañero, desde cualquier dispositivo. Selecciona tu nombre para acceder a tu plan personal.
+    Los datos de cada perfil se guardan automáticamente en la nube. Tú ves siempre la última versión de tus datos y de los de tu compañero desde cualquier dispositivo. Selecciona tu nombre para continuar.
   </div>
 </div>
 
@@ -322,15 +335,15 @@
 <header class="board" id="mainHeader" style="display:none;">
   <div class="profile-bar">
     <div class="profile-indicator">
-      <div class="profile-dot" id="headerDot"></div>
+      <div class="profile-dot" id="headerDot" aria-hidden="true"></div>
       <span id="headerProfileName">—</span>
-      <span style="color:rgba(240,203,94,0.25);margin:0 5px;">·</span>
+      <span style="color:rgba(240,203,94,0.25);margin:0 5px;" aria-hidden="true">·</span>
       <span style="font-size:10px;font-weight:400;letter-spacing:0.05em;color:rgba(240,203,94,0.45);">PLAN ACTIVO</span>
     </div>
-    <div style="display:flex;align-items:center;gap:12px;">
-      <span class="autosave-ind" id="autosaveInd">✓ Guardado automático</span>
-      <button class="btn-switch" onclick="refreshActiveProfile()" title="Releer mis datos desde la nube">⟳ Actualizar</button>
-      <button class="btn-switch" onclick="switchProfile()">⇄ Cambiar perfil</button>
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+      <span class="autosave-ind" id="autosaveInd" aria-live="polite" aria-atomic="true">✓ Guardado automático</span>
+      <button class="btn-switch" onclick="refreshActiveProfile()" title="Releer mis datos desde la nube" aria-label="Actualizar datos desde la nube">⟳ Actualizar</button>
+      <button class="btn-switch" onclick="switchProfile()" aria-label="Cambiar perfil">⇄ Cambiar perfil</button>
     </div>
   </div>
   <div class="header-inner">
@@ -341,11 +354,11 @@
   </div>
   <div class="motivation-strip">
     <span class="motiv-text">CONSTANCIA</span>
-    <span class="motiv-sep">◆</span>
+    <span class="motiv-sep" aria-hidden="true">◆</span>
     <span class="motiv-text">DISCIPLINA</span>
-    <span class="motiv-sep">◆</span>
+    <span class="motiv-sep" aria-hidden="true">◆</span>
     <span class="motiv-text">EL EXAMEN SE GANA EN LA PISTA</span>
-    <span class="motiv-sep">◆</span>
+    <span class="motiv-sep" aria-hidden="true">◆</span>
     <span class="motiv-text">AL SERVICIO DE LA CIUDADANÍA</span>
   </div>
 </header>
@@ -354,57 +367,57 @@
 
   <div class="config-card">
     <h2>Paso 1 · Configura tu plan</h2>
-    <p class="config-sub">El miércoles 1 de julio de 2026 es tu día de test: corre 1.000 m a tope en pista y mete el tiempo aquí. Todos los miércoles son de series — los rodajes los haces en los demás días de la semana a tu criterio. El plan se adapta automáticamente a cada tiempo real que registres.</p>
+    <p class="config-sub">El miércoles 1 de julio de 2026 es tu día de test: corre 1.000 m a tope en pista y mete el tiempo aquí. Todos los miércoles son de series — los rodajes los haces el resto de la semana.</p>
     <div class="config-grid">
       <div class="field">
-        <label>Fecha del test inicial</label>
+        <label for="startDate">Fecha del test inicial</label>
         <input type="date" id="startDate" value="2026-07-01">
         <div class="hint">Miércoles 1 de julio de 2026 (fijo, es tu día 1).</div>
       </div>
       <div class="field">
-        <label>Fecha aproximada del examen físico</label>
+        <label for="examDate">Fecha aproximada del examen físico</label>
         <input type="date" id="examDate" value="2026-10-28">
         <div class="hint">⚠️ Cámbiala en cuanto sepas la convocatoria exacta — el plan se recalcula entero.</div>
       </div>
       <div class="field">
-        <label>Resultado de tu test de 1.000 m (mm:ss)</label>
+        <label for="baselineTime">Resultado de tu test de 1.000 m (mm:ss)</label>
         <input type="text" id="baselineTime" placeholder="ej. 3:21" maxlength="6">
         <div class="hint">Hazlo a tope, en pista si puedes.</div>
       </div>
     </div>
     <div class="config-actions">
       <button class="btn btn-gen" id="btnGenerate">Generar plan con este tiempo</button>
-      <span class="gen-msg" id="genMsg"></span>
+      <span class="gen-msg" id="genMsg" aria-live="polite" aria-atomic="true"></span>
     </div>
   </div>
 
   <div id="waitingMsg" class="waiting">
     <strong>Esperando el resultado de tu test</strong>
-    Vuelve aquí el miércoles 1 de julio de 2026, mete el tiempo que hayas hecho en los 1.000 m arriba y pulsa "Generar plan". A partir de ahí verás el calendario completo hasta el examen, con fechas reales y ritmos calculados para tu nivel, y consejos específicos para cada sesión.
+    Vuelve aquí el miércoles 1 de julio de 2026, mete el tiempo que hayas hecho en los 1.000 m arriba y pulsa "Generar plan". A partir de ahí verás el calendario completo hasta el examen con todas las sesiones, objetivos y feedback de tu progreso.
   </div>
 
   <div id="summaryContainer"></div>
 
   <div id="evoChartOuter" style="display:none;">
     <div class="evo-chart-container" id="evoChartContainer">
-      <div class="evo-watermark">CNP PISTA</div>
+      <div class="evo-watermark" aria-hidden="true">CNP PISTA</div>
       <div class="evo-head">
         <div>
           <div class="evo-title">Evolución y proyección</div>
           <div class="evo-sub">Tiempo equivalente 1.000 m · solo miércoles (sesión compartida Rafa/Emilio)</div>
         </div>
         <div class="evo-controls">
-          <button class="evo-toggle active" id="evoToggleAll" onclick="setEvoMode('all')">Todos los datos</button>
-          <button class="evo-toggle" id="evoToggleReg" onclick="setEvoMode('registered')">Solo registrados</button>
+          <button class="evo-toggle active" id="evoToggleAll" onclick="setEvoMode('all')" aria-label="Mostrar todos los datos">Todos los datos</button>
+          <button class="evo-toggle" id="evoToggleReg" onclick="setEvoMode('registered')" aria-label="Mostrar solo registrados">Solo registrados</button>
         </div>
       </div>
       <div class="evo-legend" id="evoLegend"></div>
       <div class="evo-canvas-wrap" id="evoCanvasWrap">
-        <canvas id="evolutionChart"></canvas>
-        <div id="evoTooltip"></div>
+        <canvas id="evolutionChart" aria-label="Gráfico de evolución del tiempo en 1000m"></canvas>
+        <div id="evoTooltip" aria-hidden="true"></div>
       </div>
       <div class="evo-empty" id="evoEmpty" style="display:none;">
-        <div class="evo-empty-icon">📈</div>
+        <div class="evo-empty-icon" aria-hidden="true">📈</div>
         <div class="evo-empty-title">Registra tus primeras sesiones para ver tu evolución</div>
         <div class="evo-empty-sub">En cuanto anotes al menos 3 tiempos reales, aquí aparecerá tu curva de progreso y la proyección hacia el examen.</div>
       </div>
@@ -426,7 +439,7 @@
     <button class="btn btn-load" id="btnLoadTrigger">Importar progreso (.json)</button>
     <input type="file" id="fileLoader" accept=".json">
     <button class="btn btn-reset" id="btnReset">Borrar tiempos registrados</button>
-    <span class="save-msg" id="saveMsg"></span>
+    <span class="save-msg" id="saveMsg" aria-live="polite" aria-atomic="true"></span>
   </div>
 
 </main>
@@ -434,15 +447,15 @@
 <footer class="notes" id="mainFooter" style="display:none;">
   <h3>Notas prácticas</h3>
   <ul>
-    <li><strong>Miércoles = pista siempre.</strong> Todos los miércoles son de series. Los rodajes los haces en martes, jueves o cuando puedas. Un rodaje suave de 30 minutos cualquier otro día multiplica los resultados.</li>
-    <li><strong>Emilio tiene sesiones extra (lunes y viernes):</strong> los lunes trabajamos velocidad (series cortas a ritmo rápido) y los viernes resistencia (series largas a ritmo controlado). Los miércoles son idénticos a Rafa.</li>
-    <li><strong>Fase 1 rediseñada:</strong> ya no es rodaje continuo. Los miércoles de Fase 1 son series cortas de iniciación al ritmo — así desde el primer día se trabaja con el cronómetro y se aprende a dosificar.</li>
-    <li><strong>Adaptación automática:</strong> cada vez que registras un tiempo real, el plan recalcula todos los objetivos siguientes. Si estás mejorando más de lo previsto, los tiempos objetivo bajan (más ambicioso). Si vas más justo, sube (más asequible).</li>
+    <li><strong>Miércoles = pista siempre.</strong> Todos los miércoles son de series. Los rodajes los haces en martes, jueves o cuando puedas. Un rodaje suave de 30 minutos cualquier otro día es suficiente.</li>
+    <li><strong>Emilio tiene sesiones extra (lunes y viernes):</strong> los lunes trabajamos velocidad (series cortas a ritmo rápido) y los viernes resistencia (series largas a ritmo controlado para acumular minutos).</li>
+    <li><strong>Fase 1 rediseñada:</strong> ya no es rodaje continuo. Los miércoles de Fase 1 son series cortas de iniciación al ritmo — así desde el primer día se trabaja con el cronómetro de verdad.</li>
+    <li><strong>Adaptación automática:</strong> cada vez que registras un tiempo real, el plan recalcula todos los objetivos siguientes. Si estás mejorando más de lo previsto, los tiempos objetivo suben; si vas más lento, bajan con cuidado.</li>
     <li><strong>Ritmos ajustados por distancia:</strong> las series cortas se corren más rápido que el ritmo de examen. El plan calcula el ritmo específico para cada distancia.</li>
     <li><strong>Columna "Equiv. 1000 m":</strong> el ritmo equivalente en 1000 m te dice a qué nivel estás trabajando realmente. Sirve para comparar todas las sesiones en la misma unidad.</li>
-    <li><strong>La nota orientativa</strong> usa el baremo oficial de 1.000 m por tramos enteros (Hombres): 2'54" o menos = 10, hasta 3'49" o más = 0, en escalones de 1 punto cada ~5-6 segundos. Verifica siempre que coincide con el baremo de tu convocatoria concreta en el BOE, ya que puede variar (sexo, edad, escala, turno).</li>
+    <li><strong>La nota orientativa</strong> usa el baremo oficial de 1.000 m por tramos enteros (Hombres): 2'54" o menos = 10, hasta 3'49" o más = 0, en escalones de 1 punto cada ~5-6 segundos.</li>
     <li><strong>Taper (últimas 2 semanas):</strong> no te esfuerces. Llegar descansado al examen vale tanto como el mejor entrenamiento.</li>
-    <li><strong>Guardado en la nube:</strong> los datos se guardan automáticamente en la nube al instante, así tú ves siempre los tuyos y los de tu compañero actualizados, desde cualquier dispositivo. Usa "Exportar progreso" para hacer además una copia de seguridad en .json.</li>
+    <li><strong>Guardado en la nube:</strong> los datos se guardan automáticamente en la nube al instante, así tú ves siempre los tuyos y los de tu compañero actualizados, desde cualquier dispositivo.</li>
   </ul>
 </footer>
 
@@ -674,1144 +687,8 @@ function fmtDate(d){
 }
 function addDays(date,days){ const d=new Date(date); d.setDate(d.getDate()+days); return d; }
 
-
-/* ==================== BAREMO ==================== */
-const baremoTramos=[
-  {max:174,p:10},{max:180,p:9},{max:186,p:8},{max:192,p:7},{max:198,p:6},
-  {max:204,p:5},{max:210,p:4},{max:216,p:3},{max:222,p:2},{max:228,p:1}
-];
-function scoreFromTime(t){
-  const rt=Math.ceil(t);
-  for(let i=0;i<baremoTramos.length;i++){
-    if(rt<=baremoTramos[i].max) return baremoTramos[i].p;
-  }
-  return 0;
-}
-function scoreClass(s){ return s>=7?'score-good':s>=5?'score-mid':'score-low'; }
-
-/* ==================== RITMO POR DISTANCIA ==================== */
-function distPaceMultiplier(dist){
-  if(dist>=1200) return 1.02;
-  if(dist>=1000) return 1.00;
-  if(dist>=800)  return 0.96;
-  if(dist>=600)  return 0.92;
-  if(dist>=400)  return 0.87;
-  return 0.82;
-}
-
-/* ---- PERFIL PERSONAL DE VELOCIDAD ---- */
-const CURVE_MIN_POINTS = 4;
-const CURVE_MIN_DISTINCT = 3;
-
-function fitCriticalVelocity(points){
-  const distinct = {};
-  points.forEach(function(p){ distinct[p.dist] = true; });
-  const distinctCount = Object.keys(distinct).length;
-  if(points.length < CURVE_MIN_POINTS || distinctCount < CURVE_MIN_DISTINCT) return null;
-
-  const n = points.length; let sumT = 0, sumD = 0;
-  points.forEach(function(p){ sumT += p.time; sumD += p.dist; });
-  const meanT = sumT/n, meanD = sumD/n;
-  let num = 0, den = 0;
-  points.forEach(function(p){
-    num += (p.time-meanT)*(p.dist-meanD);
-    den += (p.time-meanT)*(p.time-meanT);
-  });
-  if(den === 0) return null;
-  const CS = num/den;
-  const Dp = meanD - CS*meanT;
-  if(!isFinite(CS) || CS <= 1.5 || CS >= 8) return null;
-  const testDists = [100,200,300,400,600,800,1000,1200];
-  for(let i=0;i<testDists.length;i++){
-    const t = (testDists[i]-Dp)/CS;
-    if(!isFinite(t) || t<=0) return null;
-  }
-  return {CS:CS, Dp:Dp, n:n, distinctCount:distinctCount};
-}
-
-function personalMultiplier(dist, curve){
-  const t1000 = (1000-curve.Dp)/curve.CS;
-  const tD = (dist-curve.Dp)/curve.CS;
-  const pace1000 = t1000;
-  const paceD = tD*1000/dist;
-  return paceD/pace1000;
-}
-
-function resolveDistMultiplier(dist){
-  if(PLAN && PLAN.personalCurve) return personalMultiplier(dist, PLAN.personalCurve);
-  return distPaceMultiplier(dist);
-}
-
-const FRIDAY_EASE = 1.06;
-
-function resolveSessionMultiplier(w){
-  let mult;
-  if(w.fase1mult !== undefined){
-    mult = w.fase1mult;
-  } else {
-    mult = resolveDistMultiplier(w.dist);
-    if(w.extraMult !== undefined){
-      const generic = distPaceMultiplier(w.dist);
-      const bias = w.extraMult / generic;
-      mult = mult * bias;
-    }
-  }
-  const isEmilioNow = (PLAN && PLAN.isEmilio !== undefined) ? PLAN.isEmilio : false;
-  if(w.day === 'Viernes' && isEmilioNow && !w.deload){
-    mult = mult * FRIDAY_EASE;
-  }
-  return mult;
-}
-
-function intensityLabel(w,isFase1){
-  if(isFase1) return '<span class="int-tag int-base">◎ Base</span>';
-  if(w.deload) return '<span class="int-tag int-easier">↓ Descarga</span>';
-  const m=resolveDistMultiplier(w.dist);
-  if(m>1.005) return '<span class="int-tag int-easier">↓ Más suave</span>';
-  if(m<0.995) return '<span class="int-tag int-faster">↑ Más rápido</span>';
-  return '<span class="int-tag int-examen">= Ritmo examen</span>';
-}
-
-/* ==================== PLANTILLAS BASE (MIÉRCOLES) ==================== */
-const TEMPLATE_FASE1=[
-  {dist:400,reps:4,recov:"3'",titulo:"4×400 m",desc:"Recuperación 3'",fase1mult:0.97},
-  {dist:400,reps:5,recov:"2:30",titulo:"5×400 m",desc:"Recuperación 2:30",fase1mult:0.97},
-  {dist:600,reps:3,recov:"3'",titulo:"3×600 m",desc:"Recuperación 3'",fase1mult:0.98},
-  {dist:600,reps:4,recov:"3'",titulo:"4×600 m",desc:"Recuperación 3'",fase1mult:0.98},
-];
-const TEMPLATE_FASE2=[
-  {dist:1200,reps:2,recov:"4'",titulo:"2×1200 m",desc:"Recuperación 4'"},
-  {dist:1200,reps:2,recov:"3:30",titulo:"2×1200 m",desc:"Recuperación 3:30"},
-  {dist:1000,reps:2,recov:"3:30",titulo:"2×1000 m",desc:"Recuperación 3:30"},
-  {dist:1000,reps:3,recov:"3'",titulo:"3×1000 m",desc:"Recuperación 3'"},
-  {dist:1200,reps:2,recov:"3'",extra:"+ 1×800 m suave",titulo:"2×1200 m",desc:"Recuperación 3' + 1×800 m suave"},
-  {dist:1000,reps:3,recov:"2:30",titulo:"3×1000 m",desc:"Recuperación 2:30"},
-];
-const TEMPLATE_FASE3_CORE=[
-  {dist:800,reps:3,recov:"3'",titulo:"3×800 m",desc:"Recuperación 3'"},
-  {dist:600,reps:4,recov:"2:30",titulo:"4×600 m",desc:"Recuperación 2:30"},
-  {dist:600,reps:4,recov:"2:15",titulo:"4×600 m",desc:"Recuperación 2:15"},
-  {dist:400,reps:5,recov:"2'",titulo:"5×400 m",desc:"Recuperación 2'"},
-  {dist:400,reps:5,recov:"1:45",titulo:"5×400 m",desc:"Recuperación 1:45"},
-  {dist:200,reps:6,recov:"1:15",titulo:"6×200 m",desc:"Recuperación 1:15"},
-];
-const FASE3_SIM={dist:1000,reps:2,recov:"4'",extra:"— Simulación a ritmo objetivo",titulo:"2×1000 m",desc:"Recuperación 4' — Simulación a ritmo objetivo"};
-
-const TEMPLATE_DELOAD_WED = {dist:800, reps:2, recov:"4'", titulo:"2×800 m — semana de descarga", desc:"Recuperación 4' · carga reducida a propósito", fase1mult:1.04, deload:true};
-const EXTRA_DELOAD_LUNES = {dist:200, reps:3, recov:"2'", titulo:"3×200 m suaves", desc:"Descarga — activación ligera", mult:1.04, deload:true};
-const EXTRA_DELOAD_VIERNES = {dist:600, reps:2, recov:"3'", titulo:"2×600 m suaves", desc:"Descarga — resistencia ligera", mult:1.06, deload:true};
-
-function selectFromTemplate(tpl,len){
-  const out=[];
-  if(len<=0) return out;
-  if(len<=tpl.length){ for(let i=0;i<len;i++) out.push(Object.assign({}, tpl[i])); }
-  else {
-    for(let i=0;i<tpl.length;i++) out.push(Object.assign({}, tpl[i]));
-    const ts=Math.max(0,tpl.length-2); let idx=ts;
-    while(out.length<len){ out.push(Object.assign({}, tpl[idx])); idx++; if(idx>=tpl.length) idx=ts; }
-  }
-  return out;
-}
-
-/* ==================== PLANTILLAS EXTRA PARA EMILIO (PISTA) ==================== */
-const EXTRA_LUNES = {
-  1: [
-    {dist:200, reps:6, recov:"1'30", titulo:"6×200 m", desc:"Recuperación 1:30", mult:0.85},
-    {dist:200, reps:8, recov:"1'15", titulo:"8×200 m", desc:"Recuperación 1:15", mult:0.85},
-    {dist:300, reps:5, recov:"1'30", titulo:"5×300 m", desc:"Recuperación 1:30", mult:0.88},
-    {dist:300, reps:6, recov:"1'15", titulo:"6×300 m", desc:"Recuperación 1:15", mult:0.88}
-  ],
-  2: [
-    {dist:400, reps:5, recov:"2'", titulo:"5×400 m", desc:"Recuperación 2'", mult:0.90},
-    {dist:400, reps:6, recov:"1'45", titulo:"6×400 m", desc:"Recuperación 1'45", mult:0.90},
-    {dist:300, reps:6, recov:"1'30", titulo:"6×300 m", desc:"Recuperación 1:30", mult:0.85},
-    {dist:300, reps:7, recov:"1'15", titulo:"7×300 m", desc:"Recuperación 1'15", mult:0.85}
-  ],
-  3: [
-    {dist:300, reps:6, recov:"1'15", titulo:"6×300 m", desc:"Recuperación 1'15", mult:0.82},
-    {dist:300, reps:8, recov:"1'", titulo:"8×300 m", desc:"Recuperación 1'", mult:0.82},
-    {dist:200, reps:8, recov:"1'", titulo:"8×200 m", desc:"Recuperación 1'", mult:0.78},
-    {dist:200, reps:10, recov:"1'", titulo:"10×200 m", desc:"Recuperación 1'", mult:0.78}
-  ],
-  4: [
-    {dist:100, reps:4, recov:"1'", titulo:"4×100 m suaves", desc:"Activación", mult:0.70},
-    {dist:100, reps:3, recov:"1'", titulo:"3×100 m suaves", desc:"Activación", mult:0.70}
-  ]
-};
-const EXTRA_VIERNES = {
-  1: [
-    {dist:800, reps:2, recov:"3'", titulo:"2×800 m", desc:"Recuperación 3'", mult:1.02},
-    {dist:800, reps:3, recov:"2'30", titulo:"3×800 m", desc:"Recuperación 2:30", mult:1.02},
-    {dist:1000, reps:2, recov:"3'", titulo:"2×1000 m", desc:"Recuperación 3'", mult:1.00},
-    {dist:1000, reps:2, recov:"2'30", titulo:"2×1000 m", desc:"Recuperación 2:30", mult:1.00}
-  ],
-  2: [
-    {dist:1200, reps:2, recov:"3'30", titulo:"2×1200 m", desc:"Recuperación 3:30", mult:1.04},
-    {dist:1200, reps:2, recov:"3'", titulo:"2×1200 m", desc:"Recuperación 3'", mult:1.04},
-    {dist:1000, reps:3, recov:"3'", titulo:"3×1000 m", desc:"Recuperación 3'", mult:1.00},
-    {dist:1000, reps:3, recov:"2'30", titulo:"3×1000 m", desc:"Recuperación 2:30", mult:1.00}
-  ],
-  3: [
-    {dist:800, reps:3, recov:"2'30", titulo:"3×800 m", desc:"Recuperación 2:30", mult:0.98},
-    {dist:800, reps:4, recov:"2'", titulo:"4×800 m", desc:"Recuperación 2'", mult:0.98},
-    {dist:1000, reps:2, recov:"3'", titulo:"2×1000 m", desc:"Recuperación 3'", mult:1.00},
-    {dist:1000, reps:2, recov:"2'30", titulo:"2×1000 m", desc:"Recuperación 2:30", mult:1.00}
-  ],
-  4: [
-    {dist:200, reps:2, recov:"2'", titulo:"2×200 m suaves", desc:"Activación", mult:0.70},
-    {dist:200, reps:2, recov:"2'", titulo:"2×200 m suaves", desc:"Activación", mult:0.70}
-  ]
-};
-
-function getExtraTemplate(day, fase, weekInFase){
-  const arr = day === 'Lunes' ? EXTRA_LUNES[fase] : EXTRA_VIERNES[fase];
-  if(!arr || !arr.length) return null;
-  const idx = weekInFase % arr.length;
-  return arr[idx];
-}
-
-/* ==================== CONSEJOS ==================== */
-function getTips(week){
-  const fase = week.fase, dist = week.dist || null, day = week.day || 'Miércoles';
-  if(week.deload){
-    return {titulo:"💡 Consejos · Semana de descarga", items:[
-      "<strong>Es intencionado:</strong> menos volumen y ritmo más suave a propósito, no es que vayas peor.",
-      "<strong>Objetivo:</strong> asimilar la carga acumulada antes de entrar en la fase más exigente.",
-      "<strong>No la compenses:</strong> no añadas series ni aprietes el ritmo por tu cuenta esta semana.",
-      "<strong>Duerme e hidrátate igual que en una semana normal.</strong>",
-      "<strong>"+day+":</strong> "+(day==='Lunes'?'activación ligera':day==='Viernes'?'resistencia suave':'sesión de descarga')
-    ]};
-  }
-  if(fase === 1){
-    return {titulo:"💡 Consejos · Fase 1 (iniciación)", items:[
-      "<strong>Objetivo:</strong> aprender a dosificar el ritmo con el cronómetro. No esforzarse al límite.",
-      "<strong>Calentamiento:</strong> 10' trote suave + 4-5 progresivos de 80 m.",
-      "<strong>Salida de pie:</strong> igual que en el examen.",
-      "<strong>Recuperación activa:</strong> camina o trota muy suave entre series.",
-      "<strong>Rodaje complementario:</strong> un rodaje suave de 30-40' otro día de la semana.",
-      "<strong>"+day+":</strong> "+(day==='Lunes'?'velocidad pura con series cortas':day==='Viernes'?'resistencia con series más largas':'sesión principal de la semana')
-    ]};
-  }
-  if(fase === 4){
-    return {titulo:"💡 Consejos · Taper — llegar fresco", items:[
-      "<strong>No busques marca:</strong> el objetivo es activar sin fatiga.",
-      "<strong>Duerme e hidrátate bien:</strong> clave en estas dos semanas.",
-      "<strong>"+day+":</strong> "+(day==='Lunes'?'activación muy suave':day==='Viernes'?'último estímulo antes del examen':'simulación controlada')
-    ]};
-  }
-  if(fase === 2){
-    if(dist >= 1200) return {titulo:"💡 Consejos · Series largas (1200 m)", items:[
-      "<strong>Ritmo suave a propósito:</strong> 2% más lento que el ritmo de examen. No aprietes.",
-      "<strong>Respiración rítmica:</strong> 3 pasos inspiración, 2 espiración.",
-      "<strong>Postura relajada:</strong> hombros bajos, brazos a 90°.",
-      "<strong>Respeta la recuperación:</strong> no llegues demasiado fresco.",
-      "<strong>"+day+":</strong> "+(day==='Lunes'?'trabajo de velocidad con 400m':day==='Viernes'?'resistencia específica':'sesión principal')
-    ]};
-    return {titulo:"💡 Consejos · Series de 1000 m (ritmo examen)", items:[
-      "<strong>Ritmo real de examen:</strong> estas series son las más específicas.",
-      "<strong>Salida controlada:</strong> no quemes en los primeros 200 m.",
-      "<strong>Último 200 m:</strong> donde se decide el tiempo.",
-      "<strong>Mental:</strong> el examen son 1000 m una sola vez; aquí los haces 2-3 veces.",
-      "<strong>"+day+":</strong> "+(day==='Lunes'?'velocidad con 400m':day==='Viernes'?'resistencia con 800-1200m':'sesión principal')
-    ]};
-  }
-  if(fase === 3){
-    if(dist <= 200) return {titulo:"💡 Consejos · Series de 200 m (velocidad pura)", items:[
-      "<strong>Máxima velocidad:</strong> estas series deben doler desde el metro 50.",
-      "<strong>Técnica:</strong> rodillas arriba, brazos potentes, inclinación leve.",
-      "<strong>Recuperación generosa:</strong> no escatimes el descanso.",
-      "<strong>No hagas más repeticiones de las indicadas.</strong>",
-      "<strong>"+day+":</strong> sesión de velocidad"
-    ]};
-    if(dist <= 400) return {titulo:"💡 Consejos · Series de 400 m", items:[
-      "<strong>Un 13% más rápido que el ritmo de examen:</strong> trabajo de velocidad.",
-      "<strong>Distribución:</strong> primeros 100 m controlados, últimos 100 m a tope.",
-      "<strong>Recuperación activa:</strong> camina o trota suave.",
-      "<strong>Hidratación:</strong> ten agua a pie de pista.",
-      "<strong>"+day+":</strong> "+(day==='Lunes'?'velocidad pura':day==='Viernes'?'resistencia-velocidad':'sesión principal')
-    ]};
-    if(dist <= 600) return {titulo:"💡 Consejos · Series de 600 m", items:[
-      "<strong>Zona de VO2max:</strong> exigente pero sostenible.",
-      "<strong>Marca de referencia:</strong> no te desvíes más de 3-4 seg por repetición.",
-      "<strong>Últimos 200 m:</strong> mantén cadencia.",
-      "<strong>Calentamiento:</strong> 12' trote + progresivos.",
-      "<strong>"+day+":</strong> sesión de calidad"
-    ]};
-    return {titulo:"💡 Consejos · Series de 800 m", items:[
-      "<strong>Distancia puente:</strong> nexo entre resistencia y velocidad.",
-      "<strong>Salida de pie:</strong> arranca fuerte 50 m, luego asiente.",
-      "<strong>Ritmo por vuelta:</strong> primera vuelta manejable, segunda confirmación.",
-      "<strong>Recuperación de 3':</strong> suficiente para no llegar muerto, no fresco.",
-      "<strong>"+day+":</strong> sesión de transición"
-    ]};
-  }
-  return {titulo:"💡 Consejos", items:["Ejecuta la sesión planificada. Registra tu tiempo al terminar."]};
-}
-
-/* ==================== RE-ANCLAJE DEL TEST INICIAL ==================== */
-const ANCHOR_MIN_F1_SESSIONS = 3;
-const ANCHOR_DIFF_THRESHOLD = 0.04;
-const ANCHOR_WEIGHT_PER_SESSION = 0.15;
-const ANCHOR_MAX_WEIGHT = 0.6;
-
-function estimateBaselineFromFase1(allSessions, actualsObj){
-  const f1w = allSessions.filter(function(s){
-    return s.day === 'Miércoles' && s.fase1mult !== undefined && !s.deload &&
-      actualsObj[s.key] !== undefined && actualsObj[s.key] !== null;
-  });
-  if(f1w.length < 2) return null;
-  let sum = 0;
-  f1w.forEach(function(s){
-    const pace = actualsObj[s.key] / (s.dist/1000);
-    sum += pace / s.fase1mult;
-  });
-  return {value: sum/f1w.length, n: f1w.length};
-}
-
-/* ==================== BUILD PLAN ==================== */
-function buildPlan(profile){
-  const start = new Date(CONFIG.startDate+'T00:00:00');
-  const exam = new Date(CONFIG.examDate+'T00:00:00');
-  let baseline = CONFIG.baselineTime;
-  const isEmilio = (profile === 'Emilio');
-
-  const wedDates = [];
-  let d = addDays(start, 7);
-  while(d <= exam){ wedDates.push(new Date(d)); d = addDays(d, 7); }
-  const N = wedDates.length;
-  if(N < 1) return {error:"La fecha del examen es anterior o igual a la fecha del test. Revisa las fechas."};
-
-  const taperLen = N <= 2 ? N : N <= 4 ? 1 : 2;
-  const remaining = N - taperLen;
-  function allocate(rem){
-    if(rem <= 0) return {p1:0,p2:0,p3:0};
-    if(rem === 1) return {p1:0,p2:0,p3:1};
-    if(rem === 2) return {p1:0,p2:1,p3:1};
-    if(rem === 3) return {p1:1,p2:1,p3:1};
-    if(rem === 4) return {p1:1,p2:2,p3:1};
-    if(rem === 5) return {p1:1,p2:2,p3:2};
-    const P3_MAX = 6;
-    let a = Math.max(2, Math.round(rem*0.32));
-    let b = Math.max(2, Math.round(rem*0.40));
-    let c = Math.min(P3_MAX, Math.max(2, rem-a-b));
-    let leftover = rem-a-b-c;
-    if(leftover > 0) b += leftover;
-    let total = a+b+c, g=0;
-    while(total > rem && g<200){
-      if(b>2) b--; else if(a>2) a--; else if(c>2) c--; else break;
-      total = a+b+c; g++;
-    }
-    while(total < rem){ b++; total++; }
-    return {p1:a,p2:b,p3:c};
-  }
-  const alloc = allocate(remaining);
-
-  const f1 = selectFromTemplate(TEMPLATE_FASE1, alloc.p1);
-  const f2 = selectFromTemplate(TEMPLATE_FASE2, alloc.p2);
-  const f3 = alloc.p3 <= 0 ? [] : alloc.p3 === 1 ? [FASE3_SIM] : selectFromTemplate(TEMPLATE_FASE3_CORE, alloc.p3-1).concat([FASE3_SIM]);
-
-  const deloadWeekIdx = alloc.p2 >= 4 ? Math.floor(alloc.p2/2) : -1;
-  if(deloadWeekIdx >= 0 && deloadWeekIdx < f2.length){
-    f2[deloadWeekIdx] = Object.assign({}, TEMPLATE_DELOAD_WED);
-  }
-
-  const wedSessions = f1.concat(f2).concat(f3);
-  const taperWeeks = N - (f1.length + f2.length + f3.length);
-  for(let i=0; i<taperWeeks; i++){
-    const descT = i === 0 && taperWeeks === 2 ? 'Simulación controlada: 1×1000 m + 4×150 m sueltos' : 'Activación: 4–6×80–100 m progresivos';
-    const titT = i === 0 && taperWeeks === 2 ? '1×1000 m controlado + 4×150 m' : 'Progresivos 80-100 m';
-    wedSessions.push({dist:0, reps:0, recov:'', titulo:titT, desc:descT, fase:4, taper:true});
-  }
-  while(wedSessions.length < N){
-    wedSessions.push({dist:0, reps:0, recov:'', titulo:'Activación', desc:'Suave', fase:4, taper:true});
-  }
-
-  const allSessions = [];
-  let wedIdx = 0;
-  let totalSessions = 0;
-  let recalcCounter = 0;
-
-  if(!isEmilio){
-    for(let i=0; i<N; i++){
-      const w = wedSessions[i];
-      const date = wedDates[i];
-      const fase = i < alloc.p1 ? 1 : i < alloc.p1 + alloc.p2 ? 2 : i < alloc.p1 + alloc.p2 + alloc.p3 ? 3 : 4;
-      w.fase = fase;
-      w.date = date;
-      w.day = 'Miércoles';
-      w.key = 'w'+i;
-      w.recalc = !w.taper && !w.deload;
-      if(w.dist !== undefined && w.dist !== 0){
-        w.raceIdx = w.recalc ? recalcCounter++ : null;
-        w.plannedBasePaceOriginal = null;
-        w.adjustedBasePace = null;
-      } else {
-        w.raceIdx = null;
-        w.plannedBasePaceOriginal = null;
-        w.adjustedBasePace = null;
-      }
-      allSessions.push(w);
-      totalSessions++;
-    }
-  } else {
-    let firstMonday = addDays(start, 7 - start.getDay() + 1);
-    if(firstMonday < start) firstMonday = addDays(firstMonday, 7);
-    let currentDate = new Date(firstMonday);
-    let weekCounter = 0;
-    while(currentDate <= exam){
-      const fase = weekCounter < alloc.p1 ? 1 : weekCounter < alloc.p1 + alloc.p2 ? 2 : weekCounter < alloc.p1 + alloc.p2 + alloc.p3 ? 3 : 4;
-      const days = [1,3,5];
-      for(let di=0; di<days.length; di++){
-        const dayOffset = days[di] - currentDate.getDay();
-        const sessionDate = addDays(currentDate, dayOffset);
-        if(sessionDate < start) continue;
-        if(sessionDate > exam) break;
-        let dayName = '';
-        if(days[di] === 1) dayName = 'Lunes';
-        else if(days[di] === 3) dayName = 'Miércoles';
-        else dayName = 'Viernes';
-
-        let session = null;
-        if(dayName === 'Miércoles'){
-          const wedTemplate = wedSessions[wedIdx];
-          if(!wedTemplate) break;
-          session = Object.assign({}, wedTemplate);
-          session.fase = fase;
-          session.day = 'Miércoles';
-          session.date = sessionDate;
-          session.key = 'w'+totalSessions;
-          session.recalc = !session.taper && !session.deload;
-          if(session.dist !== undefined && session.dist !== 0){
-            session.raceIdx = session.recalc ? recalcCounter++ : null;
-            session.plannedBasePaceOriginal = null;
-            session.adjustedBasePace = null;
-          } else {
-            session.raceIdx = null;
-            session.plannedBasePaceOriginal = null;
-            session.adjustedBasePace = null;
-          }
-          wedIdx++;
-        } else {
-          const weekInFase = weekCounter - (fase===1?0: fase===2?alloc.p1: fase===3?alloc.p1+alloc.p2: alloc.p1+alloc.p2+alloc.p3);
-          const isDeloadWeek = (fase === 2 && weekInFase === deloadWeekIdx);
-          const extra = isDeloadWeek ?
-            (dayName === 'Lunes' ? EXTRA_DELOAD_LUNES : EXTRA_DELOAD_VIERNES) :
-            getExtraTemplate(dayName, fase, weekInFase);
-          if(!extra) continue;
-          const sessRecalc = !extra.deload;
-          session = {
-            dist: extra.dist,
-            reps: extra.reps,
-            recov: extra.recov,
-            titulo: extra.titulo,
-            desc: extra.desc,
-            fase: fase,
-            day: dayName,
-            date: sessionDate,
-            key: 'w'+totalSessions,
-            recalc: sessRecalc,
-            raceIdx: sessRecalc ? recalcCounter++ : null,
-            plannedBasePaceOriginal: null,
-            adjustedBasePace: null,
-            extraMult: extra.mult,
-            deload: !!extra.deload,
-            taper: false
-          };
-        }
-        if(session){
-          allSessions.push(session);
-          totalSessions++;
-        }
-      }
-      currentDate = addDays(currentDate, 7);
-      weekCounter++;
-      if(weekCounter >= N) break;
-    }
-  }
-
-  // Re-anclaje
-  const testBaseline = baseline;
-  const f1Estimate = estimateBaselineFromFase1(allSessions, actuals);
-  let anchorRecalibrated = false;
-  if(f1Estimate && f1Estimate.n >= ANCHOR_MIN_F1_SESSIONS){
-    const diffRatio = (testBaseline - f1Estimate.value) / testBaseline;
-    if(Math.abs(diffRatio) > ANCHOR_DIFF_THRESHOLD){
-      const wF1 = Math.min(ANCHOR_MAX_WEIGHT, ANCHOR_WEIGHT_PER_SESSION * f1Estimate.n);
-      baseline = testBaseline * (1 - wF1) + f1Estimate.value * wF1;
-      anchorRecalibrated = true;
-    }
-  }
-
-  // Perfil personal
-  const curvePoints = allSessions.filter(function(s){
-    return s.dist && s.dist > 0 && s.extraMult === undefined &&
-      s.fase1mult === undefined && !s.deload &&
-      actuals[s.key] !== undefined && actuals[s.key] !== null;
-  }).map(function(s){ return {dist:s.dist, time:actuals[s.key]}; });
-  const personalCurve = fitCriticalVelocity(curvePoints);
-  const curveDistinct = {};
-  curvePoints.forEach(function(p){ curveDistinct[p.dist]=true; });
-
-  // Sesiones recalc
-  const recalcSessions = allSessions.filter(function(s){ return s.recalc && s.raceIdx !== null; });
-  const M = recalcSessions.length;
-  if(M === 0) {
-    return {error: "No hay sesiones de entrenamiento programadas."};
-  }
-  const weeksEffective = N - taperLen;
-  const freqBonus = isEmilio ? 0.03 : 0;
-  const impFactor = Math.min(0.15, weeksEffective * 0.006 + freqBonus);
-  const targetPaceOriginal = baseline * (1 - impFactor);
-
-  // Asignar plannedBasePaceOriginal (sin ajuste)
-  for(let idx=0; idx<M; idx++){
-    const frac = M > 1 ? idx / (M - 1) : 1;
-    recalcSessions[idx].plannedBasePaceOriginal = baseline + (targetPaceOriginal - baseline) * frac;
-  }
-
-  // Calcular adjustedBasePace para cada sesión usando solo sesiones anteriores
-  for(let idx2=0; idx2<M; idx2++){
-    const w = recalcSessions[idx2];
-    if(idx2 === 0){
-      w.adjustedBasePace = w.plannedBasePaceOriginal;
-      continue;
-    }
-    const devs = [];
-    for(let i=0; i<idx2; i++){
-      const pw = recalcSessions[i];
-      if(actuals[pw.key] !== undefined && actuals[pw.key] !== null){
-        const mult = resolveSessionMultiplier(pw);
-        const plannedTime = pw.plannedBasePaceOriginal * mult * (pw.dist/1000);
-        if(plannedTime > 0){
-          devs.push((plannedTime - actuals[pw.key]) / plannedTime);
-        }
-      }
-    }
-    if(!devs.length){
-      w.adjustedBasePace = w.plannedBasePaceOriginal;
-      continue;
-    }
-    const recent = devs.slice(-3);
-    const weightsByLen = {1:[1], 2:[0.35,0.65], 3:[0.15,0.30,0.55]};
-    const weights = weightsByLen[recent.length];
-    let avgDev = 0;
-    for(let wi=0; wi<recent.length; wi++){ avgDev += recent[wi] * weights[wi]; }
-    const amp = Math.max(-0.08, Math.min(0.08, avgDev));
-    w.adjustedBasePace = w.plannedBasePaceOriginal * (1 - amp);
-  }
-
-  // goalAdjust global (solo para mostrar en marcador)
-  const allDevs = [];
-  recalcSessions.forEach(function(ws){
-    if(actuals[ws.key] !== undefined && actuals[ws.key] !== null){
-      const mult = resolveSessionMultiplier(ws);
-      const plannedTime = ws.plannedBasePaceOriginal * mult * (ws.dist/1000);
-      if(plannedTime > 0) allDevs.push((plannedTime - actuals[ws.key]) / plannedTime);
-    }
-  });
-  let goalAdjust = 0;
-  if(allDevs.length){
-    const avgAll = allDevs.reduce(function(a,b){ return a+b; }, 0) / allDevs.length;
-    goalAdjust = Math.max(-0.07, Math.min(0.07, avgAll));
-  }
-
-  const plan = {
-    weeks: allSessions,
-    baseline: testBaseline,
-    anchorBaseline: baseline,
-    anchorRecalibrated: anchorRecalibrated,
-    f1Estimate: f1Estimate,
-    targetPace: targetPaceOriginal * (1 - goalAdjust),
-    targetPaceOriginal: targetPaceOriginal,
-    goalAdjust: goalAdjust,
-    M: M,
-    improvementFactor: impFactor,
-    N: N,
-    p1: alloc.p1,
-    p2: alloc.p2,
-    p3: alloc.p3,
-    taperLen: taperLen,
-    isEmilio: isEmilio,
-    personalCurve: personalCurve,
-    curvePointsCount: curvePoints.length,
-    curveDistinctCount: Object.keys(curveDistinct).length
-  };
-  return plan;
-}
-
-/* ==================== RENDER ==================== */
-const faseInfo = {
-  1:{nombre:"Base en pista", desc:"Miércoles de series de iniciación — rodajes el resto de la semana."},
-  2:{nombre:"Resistencia específica", desc:"Series largas (1000–1200 m): motor para sostener el ritmo de examen."},
-  3:{nombre:"Ritmo de examen", desc:"Series cortas a ritmo superior al examen → velocidad. Cierra con simulación."},
-  4:{nombre:"Taper + simulacro", desc:"Activación, llegar fresco al examen. Sin esfuerzos largos."}
-};
-
-function renderScoreboard(){
-  const sb = document.getElementById('scoreboard');
-  if(!PLAN || PLAN.error){
-    sb.innerHTML = '<div class="score-cell"><div class="label">ESTADO</div><div class="value" style="font-size:15px;">Esperando test del 1 de julio</div></div>';
-    return;
-  }
-  const rw = PLAN.weeks.filter(function(w){ return w.recalc && w.raceIdx !== null; });
-  let next = null;
-  for(let i=0; i<rw.length; i++){
-    if(skipped[rw[i].key]) continue;
-    if(actuals[rw[i].key] === undefined || actuals[rw[i].key] === null){ next = rw[i]; break; }
-  }
-  let nextHtml = 'Plan completo';
-  if(next){
-    const bp = next.adjustedBasePace !== null ? next.adjustedBasePace : next.plannedBasePaceOriginal;
-    const mult = resolveSessionMultiplier(next);
-    const sp = bp * mult;
-    const rt = sp * (next.dist/1000);
-    nextHtml = fmtDate(next.date)+': '+secToTime(rt)+'<small>/'+next.dist+'m</small>';
-  }
-  const logged = Object.values(actuals).filter(function(v){ return v!==null && v!==undefined; }).length;
-  const tr = calcTrend(); let trendHtml = '';
-  if(tr.trend === 'fast'){
-    trendHtml = '<div class="score-cell"><div class="label">TENDENCIA</div><div class="value"><span class="trend-arrow" style="color:var(--ok)">↑</span></div><div style="font-size:10px;color:var(--ok);margin-top:2px;">+'+(tr.avgDelta*100).toFixed(1)+'% sobre el plan<br>Plan acelerado ✓</div></div>';
-  } else if(tr.trend === 'slow'){
-    trendHtml = '<div class="score-cell"><div class="label">TENDENCIA</div><div class="value"><span class="trend-arrow" style="color:var(--granate)">↓</span></div><div style="font-size:10px;color:var(--granate);margin-top:2px;">-'+(Math.abs(tr.avgDelta)*100).toFixed(1)+'% bajo el plan<br>Plan suavizado ✓</div></div>';
-  } else if(logged > 0){
-    trendHtml = '<div class="score-cell"><div class="label">TENDENCIA</div><div class="value"><span class="trend-arrow" style="color:var(--gold)">→</span></div><div style="font-size:10px;color:var(--gray);margin-top:2px;">En línea con el plan</div></div>';
-  }
-  sb.innerHTML =
-    '<div class="score-cell"><div class="label">TEST 1 JULIO</div><div class="value">'+paceToTime(PLAN.baseline)+'<small>/km</small></div></div>'+
-    '<div class="score-cell"><div class="label">OBJETIVO FINAL</div><div class="value">'+paceToTime(PLAN.targetPace)+'<small>/km</small></div>'+
-      (Math.abs(PLAN.goalAdjust||0) > 0.005 ?
-        '<div style="font-size:10px;margin-top:3px;color:'+(PLAN.goalAdjust>0?'var(--ok)':'var(--gold-bright)')+';">'+
-          (PLAN.goalAdjust>0?'↑ endurecido':'↓ suavizado')+' desde '+paceToTime(PLAN.targetPaceOriginal)+' ('+(PLAN.goalAdjust>0?'+':'')+(PLAN.goalAdjust*100).toFixed(1)+'%)'+
-        '</div>' : '')+
-    '</div>'+
-    '<div class="score-cell"><div class="label">PRÓXIMA SESIÓN</div><div class="value" style="font-size:17px;">'+nextHtml+'</div></div>'+
-    '<div class="score-cell"><div class="label">SESIONES REGISTRADAS</div><div class="value">'+logged+'<small>/'+rw.length+'</small></div></div>'+
-    trendHtml;
-}
-
-function calcTrend(){
-  if(!PLAN) return {count:0, avgDelta:0, trend:'ontrack'};
-  const rw = PLAN.weeks.filter(function(w){ return w.recalc && w.raceIdx !== null; });
-  const deltas = [];
-  rw.forEach(function(w){
-    if(actuals[w.key] !== undefined && actuals[w.key] !== null){
-      const mult = resolveSessionMultiplier(w);
-      const pt = w.plannedBasePaceOriginal * mult * (w.dist/1000);
-      deltas.push((pt - actuals[w.key]) / pt);
-    }
-  });
-  if(!deltas.length) return {count:0, avgDelta:0, trend:'ontrack'};
-  const avg = deltas.reduce(function(a,b){ return a+b; },0) / deltas.length;
-  return {count: deltas.length, avgDelta: avg, trend: avg>0.025?'fast': avg<-0.025?'slow':'ontrack'};
-}
-
-function renderSummary(){
-  const c = document.getElementById('summaryContainer');
-  if(!PLAN || PLAN.error){ c.innerHTML=''; return; }
-  const fs = scoreFromTime(PLAN.targetPace);
-  c.innerHTML = '<div class="summary-card">'+
-    '<div class="item"><span class="big">'+PLAN.N+'</span><span class="lbl">semanas hasta el examen</span></div>'+
-    '<div class="item"><span class="big">'+(PLAN.improvementFactor*100).toFixed(1)+'%</span><span class="lbl">mejora objetivo sobre tu test</span></div>'+
-    '<div class="item"><span class="big">'+fs+'/10</span><span class="lbl">nota orientativa del objetivo final</span></div>'+
-    '<div class="item"><span class="big">'+PLAN.p1+'·'+PLAN.p2+'·'+PLAN.p3+'·'+PLAN.taperLen+'</span><span class="lbl">semanas por fase (base·resist.·ritmo·taper)</span></div>'+
-    (PLAN.isEmilio ? '<div class="item"><span class="big">3 ses/sem</span><span class="lbl">Lun·Mié·Vie — Emilio</span></div>' : '')+
-    '</div>'+
-    renderAnchorBadge()+
-    renderCurveBadge();
-}
-
-function renderAnchorBadge(){
-  if(!PLAN.anchorRecalibrated) return '';
-  const fe = PLAN.f1Estimate;
-  return '<div class="curve-badge anchor-on">'+
-    '<span class="curve-dot"></span>'+
-    '<span><strong>Ancla de partida ajustada con tus series de F1</strong> — tu test dio '+paceToTime(PLAN.baseline)+'/km, pero tus '+fe.n+
-    ' series de miércoles de Fase 1 ya corridas apuntan a '+paceToTime(fe.value)+'/km de nivel real. '+
-    'Como la diferencia es relevante, los objetivos de todo el plan usan una media ponderada ('+paceToTime(PLAN.anchorBaseline)+'/km) en vez del test en crudo — '+
-    'el test original se sigue mostrando arriba tal cual, esto solo afina el cálculo interno. Se irá refinando según registres más series de F1.</span>'+
-    '</div>';
-}
-
-function renderCurveBadge(){
-  const pc = PLAN.personalCurve;
-  if(pc){
-    const csKmh = (pc.CS*3.6).toFixed(2);
-    return '<div class="curve-badge curve-on">'+
-      '<span class="curve-dot"></span>'+
-      '<span><strong>Perfil personal activo</strong> — calculado con '+pc.n+' series reales en '+pc.distinctCount+' distancias distintas. '+
-      'Velocidad crítica estimada: '+csKmh+' km/h. La proporción 200/400/800/1000 m ya no usa la tabla genérica, usa tu propia curva.</span>'+
-      '</div>';
-  }
-  const have = PLAN.curvePointsCount, haveD = PLAN.curveDistinctCount;
-  const needP = Math.max(0, CURVE_MIN_POINTS-have), needD = Math.max(0, CURVE_MIN_DISTINCT-haveD);
-  const faltan = [];
-  if(needD>0) faltan.push(haveD+'/'+CURVE_MIN_DISTINCT+' distancias distintas');
-  if(needP>0) faltan.push(have+'/'+CURVE_MIN_POINTS+' series registradas');
-  return '<div class="curve-badge curve-off">'+
-    '<span class="curve-dot"></span>'+
-    '<span><strong>Perfil genérico (temporal)</strong> — de momento usa la misma proporción para todos. '+
-    'Se activará solo cuando registres tiempos reales de al menos '+CURVE_MIN_DISTINCT+' distancias distintas de Miércoles ('+faltan.join(' · ')+').</span>'+
-    '</div>';
-}
-
-function renderFases(){
-  const container = document.getElementById('fasesContainer');
-  container.innerHTML = '';
-  if(!PLAN || PLAN.error) return;
-  [1,2,3,4].forEach(function(faseNum){
-    const fw = PLAN.weeks.filter(function(w){ return w.fase === faseNum; });
-    if(!fw.length) return;
-    const info = faseInfo[faseNum];
-    const block = document.createElement('div'); block.className = 'fase-block';
-    const stc = faseNum !== 4;
-    const hc = stc ?
-      '<th>Fecha</th><th>Sesión</th><th>Objetivo / rep'+(faseNum>=2&&faseNum<=3?'<br><span style="font-weight:400;opacity:0.7">(ritmo sesión · equiv. 1000 m)</span>':'')+'</th><th>Tiempo real</th><th>Estado</th>' :
-      '<th>Fecha</th><th>Sesión</th><th>Descripción</th><th>Estado</th>';
-    block.innerHTML =
-      '<div class="fase-head"><div class="fase-num">F'+faseNum+'</div>'+
-      '<div><h2>'+info.nombre+' · '+fw.length+' sesión'+(fw.length>1?'es':'')+'</h2><p class="fase-desc">'+info.desc+'</p></div></div>'+
-      '<table class="weeks"><thead><tr>'+hc+'</tr></thead><tbody></tbody></table>';
-    container.appendChild(block);
-    const tbody = block.querySelector('tbody');
-    fw.forEach(function(w){
-      const tr = document.createElement('tr');
-      const iF1 = (w.fase === 1 && w.day === 'Miércoles');
-      let tHtml, sHtml, iHtml;
-      if(w.recalc && w.raceIdx !== null){
-        const bp = w.adjustedBasePace !== null ? w.adjustedBasePace : w.plannedBasePaceOriginal;
-        const mult = resolveSessionMultiplier(w);
-        const sp = bp * mult;
-        const rt = sp * (w.dist/1000);
-        const sc = scoreFromTime(bp);
-        
-        // --- CORRECCIÓN: Comparar el tiempo REAL contra el objetivo AJUSTADO (rt) de esa sesión ---
-        let rb = '';
-        if(actuals[w.key] !== undefined && actuals[w.key] !== null){
-          const real = actuals[w.key];
-          if(real < rt * 0.995) {
-            rb = '<span class="recalib-badge recalib-up">▲ Mejor que plan</span>';
-          } else if(real > rt * 1.05) {
-            rb = '<span class="recalib-badge recalib-down">▼ Peor que plan</span>';
-          } else {
-            rb = '<span class="recalib-badge recalib-mid">= En el plan</span>';
-          }
-        }
-        
-        let lbl = intensityLabel(w, iF1);
-        if(w.extraMult !== undefined){
-          lbl = w.extraMult < 1 ? '<span class="int-tag int-faster">↑ Velocidad</span>' : w.extraMult > 1 ? '<span class="int-tag int-easier">↓ Resistencia</span>' : '<span class="int-tag int-examen">= Ritmo</span>';
-        }
-        tHtml = '<span class="target-val">'+secToTime(rt)+' '+lbl+rb+
-          '<span class="pace-line">Ritmo sesión: '+paceToTime(sp)+'/km</span>'+
-          '<span class="equiv-line">Equiv. 1000 m: '+paceToTime(bp)+'/km</span>'+
-          '<span class="score-chip '+scoreClass(sc)+'">'+sc+'/10</span></span>';
-        const isSk = !!skipped[w.key];
-        iHtml = '<td><input type="text" class="time-input" placeholder="mm:ss" data-key="'+w.key+'" value="'+(actuals[w.key]!==undefined&&actuals[w.key]!==null?secToTime(actuals[w.key]):'')+'"'+(isSk?' disabled':'')+'>'+
-          '<button type="button" class="btn-skip'+(isSk?' active':'')+'" data-key="'+w.key+'">'+(isSk?'↺ Deshacer':'No la hice')+'</button></td>';
-        const ha = actuals[w.key]!==undefined&&actuals[w.key]!==null;
-        if(isSk){
-          sHtml = '<span class="status-tag status-skipped">— No realizada</span>';
-        } else if(ha){
-          const rsp = actuals[w.key]/(w.dist/1000);
-          const psp2 = bp * mult;
-          if(rsp < psp2*0.995) sHtml = '<span class="status-tag status-done-fast">✓ Mejor que el plan</span>';
-          else if(rsp > psp2*1.05) sHtml = '<span class="status-tag status-done-slow">✓ Por encima objetivo</span>';
-          else sHtml = '<span class="status-tag status-info">✓ En el plan</span>';
-          tr.classList.add('recalibrated');
-        } else { sHtml = '<span class="status-tag status-pending">Pendiente</span>'; }
-        if(stc){
-          tr.innerHTML = '<td class="wk-date">'+fmtDate(w.date)+'</td><td class="wk-desc">'+w.titulo+'<span class="small">'+w.desc+'</span></td><td>'+tHtml+'</td>'+iHtml+'<td>'+sHtml+'</td>';
-        } else {
-          tr.innerHTML = '<td class="wk-date">'+fmtDate(w.date)+'</td><td class="wk-desc">'+w.titulo+'</td><td><span class="note-inline">'+w.desc+'</span></td><td>'+sHtml+'</td>';
-        }
-      } else {
-        const regStatus = actuals[w.key]!==undefined&&actuals[w.key]!==null;
-        if(stc){
-          tr.innerHTML = '<td class="wk-date">'+fmtDate(w.date)+'</td><td class="wk-desc">'+w.titulo+'</td><td><span class="note-inline">'+w.desc+'</span></td>'+
-            '<td><input type="text" class="time-input" placeholder="mm:ss" data-key="'+w.key+'" value="'+(regStatus?secToTime(actuals[w.key]):'')+'"></td>'+
-            '<td>'+(regStatus?'<span class="status-tag status-info">Registrado</span>':'<span class="status-tag status-pending">Informativo</span>')+'</td>';
-        } else {
-          tr.innerHTML = '<td class="wk-date">'+fmtDate(w.date)+'</td><td class="wk-desc">'+w.titulo+'</td><td><span class="note-inline">'+w.desc+'</span></td>'+
-            '<td>'+(regStatus?'<span class="status-tag status-info">Registrado</span>':'<span class="status-tag status-pending">Informativo</span>')+'</td>';
-        }
-      }
-      tbody.appendChild(tr);
-      const tips = getTips(w);
-      const tipTr = document.createElement('tr');
-      tipTr.className = 'tip-row';
-      const cs = stc ? 5 : 4;
-      const tipId = 'tip-'+w.key;
-      tipTr.innerHTML = '<td colspan="'+cs+'"><button class="tip-toggle" onclick="toggleTip(\''+tipId+'\',this)"><span class="tip-arrow">▶</span> '+tips.titulo+'</button>'+
-        '<div class="tip-body" id="'+tipId+'"><ul>'+tips.items.map(function(t){return '<li>'+t+'</li>';}).join('')+'</ul></div></td>';
-      tbody.appendChild(tipTr);
-    });
-  });
-
-  // Sistema anti-pérdida de foco: captura el input activo antes de renderizar
-  let inputDebounce = null;
-  container.querySelectorAll('.time-input').forEach(function(inp){
-    inp.addEventListener('input', function(e){
-      const key = e.target.dataset.key;
-      const val = parseTime(e.target.value);
-      actuals[key] = val;
-      if(val !== null) delete skipped[key];
-      
-      clearTimeout(inputDebounce);
-      inputDebounce = setTimeout(function(){
-        const activeKey = key;
-        const start = e.target.selectionStart;
-        const end = e.target.selectionEnd;
-        
-        saveToLS();
-        if (PLAN && !PLAN.error) PLAN = buildPlan(ACTIVE_PROFILE);
-        renderAll();
-        
-        // Restaurar foco
-        const newEl = document.querySelector('[data-key="'+activeKey+'"]');
-        if (newEl) {
-          newEl.focus();
-          newEl.setSelectionRange(start, end);
-        }
-      }, 600); // 600ms de debounce para no spamear renderizados
-    });
-  });
-
-  container.querySelectorAll('.btn-skip').forEach(function(btn){
-    btn.addEventListener('click', function(e){
-      const key = btn.dataset.key;
-      if(skipped[key]){
-        delete skipped[key];
-      } else {
-        skipped[key] = true;
-        delete actuals[key];
-      }
-      saveToLS();
-      if(PLAN && !PLAN.error) PLAN = buildPlan(ACTIVE_PROFILE);
-      renderAll();
-    });
-  });
-}
-
-function toggleTip(id,btn){
-  const body = document.getElementById(id);
-  if(!body) return;
-  const vis = body.classList.contains('visible');
-  body.classList.toggle('visible', !vis);
-  btn.classList.toggle('open', !vis);
-}
-
-function renderAll(){
-  renderScoreboard(); renderSummary(); renderFases(); renderEvolutionChart();
-  const hp = PLAN && !PLAN.error;
-  document.getElementById('waitingMsg').style.display = hp ? 'none' : 'block';
-  document.getElementById('controlsBar').style.display = hp ? 'flex' : 'none';
-  document.getElementById('intensityLegend').style.display = hp ? 'flex' : 'none';
-}
-
-/* ==================== GRÁFICA DE EVOLUCIÓN ==================== */
-let evoChart = null;
-let evoMode = 'all';
-
-function setEvoMode(mode){
-  evoMode = mode;
-  document.getElementById('evoToggleAll').classList.toggle('active', mode==='all');
-  document.getElementById('evoToggleReg').classList.toggle('active', mode==='registered');
-  renderEvolutionChart();
-}
-
-function evoLinRegression(points){
-  const n = points.length;
-  if(n < 2) return null;
-  let sx=0, sy=0, sxy=0, sxx=0;
-  points.forEach(function(p){ sx+=p.x; sy+=p.y; sxy+=p.x*p.y; sxx+=p.x*p.x; });
-  const denom = (n*sxx - sx*sx);
-  if(denom === 0) return null;
-  const slope = (n*sxy - sx*sy) / denom;
-  const intercept = (sy - slope*sx) / n;
-  return {slope:slope, intercept:intercept};
-}
-
-function actualBasePace(w){
-  if(actuals[w.key]===undefined || actuals[w.key]===null) return null;
-  const pace = actuals[w.key] / (w.dist/1000);
-  return pace / resolveSessionMultiplier(w);
-}
-
-function renderEvolutionChart(){
-  const outer = document.getElementById('evoChartOuter');
-  if(!PLAN || PLAN.error){ outer.style.display='none'; if(evoChart){evoChart.destroy();evoChart=null;} return; }
-  outer.style.display='block';
-
-  const sessions = PLAN.weeks.filter(function(w){
-    return w.recalc && w.raceIdx !== null && w.dist && w.day === 'Miércoles';
-  }).slice().sort(function(a,b){ return a.date - b.date; });
-
-  const registeredCount = sessions.filter(function(w){ return actualBasePace(w) !== null; }).length;
-
-  const wrap = document.getElementById('evoCanvasWrap');
-  const emptyEl = document.getElementById('evoEmpty');
-  const legendEl = document.getElementById('evoLegend');
-
-  if(registeredCount < 3){
-    wrap.style.display = 'none';
-    emptyEl.style.display = 'flex';
-    legendEl.innerHTML = '';
-    if(evoChart){ evoChart.destroy(); evoChart = null; }
-    return;
-  }
-  wrap.style.display = 'block';
-  emptyEl.style.display = 'none';
-
-  const visSessions = evoMode === 'registered' ?
-    sessions.filter(function(w){ return actualBasePace(w) !== null; }) :
-    sessions;
-
-  const labels = visSessions.map(function(w){ return fmtDate(w.date); });
-  let plannedData = visSessions.map(function(w){ return w.adjustedBasePace !== null ? w.adjustedBasePace : w.plannedBasePaceOriginal; });
-  const realData = visSessions.map(function(w){ return actualBasePace(w); });
-  let meta = visSessions.map(function(w){
-    return {
-      dateStr: fmtDate(w.date),
-      titulo: w.titulo,
-      dist: w.dist,
-      reps: w.reps,
-      skipped: !!skipped[w.key]
-    };
-  });
-
-  const realPointsAll = sessions.filter(function(w){ return actualBasePace(w) !== null; })
-    .map(function(w){ return {x: w.date.getTime(), y: actualBasePace(w)}; });
-  const reg = evoLinRegression(realPointsAll);
-
-  const examDate = new Date(CONFIG.examDate+'T00:00:00');
-  const examLabel = fmtDate(examDate);
-  let chartLabels = labels.slice();
-  let trendData = new Array(chartLabels.length).fill(null);
-  let showTrend = false;
-  const examTargetVal = PLAN.targetPace;
-
-  if(reg){
-    showTrend = true;
-    if(chartLabels[chartLabels.length-1] !== examLabel){
-      chartLabels = chartLabels.concat([examLabel]);
-      plannedData = plannedData.concat([examTargetVal]);
-      realData.push(null);
-      meta.push({dateStr:examLabel, titulo:'Examen', dist:1000, reps:1, skipped:false});
-      trendData.push(null);
-    }
-    let firstRealIdx = -1;
-    for(let i=0;i<visSessions.length;i++){
-      if(actualBasePace(visSessions[i]) !== null){ firstRealIdx = i; break; }
-    }
-    if(firstRealIdx === -1) firstRealIdx = 0;
-    for(let i2=firstRealIdx; i2<chartLabels.length; i2++){
-      const d = (i2 < visSessions.length) ? visSessions[i2].date : examDate;
-      trendData[i2] = reg.slope * d.getTime() + reg.intercept;
-    }
-  }
-
-  legendEl.innerHTML =
-    '<span><span class="evo-dot" style="color:var(--gold-bright);background:var(--gold-bright);"></span>Real (equiv. 1000 m)</span>'+
-    '<span><span class="evo-dot" style="color:var(--granate-light);background:var(--granate-light);"></span>Objetivo (equiv. 1000 m)</span>'+
-    (showTrend ? '<span><span class="evo-dot" style="color:var(--cream);background:var(--cream);"></span>Proyección</span>' : '')+
-    '<span><span class="evo-dot" style="color:#7fd396;background:#7fd396;"></span>Examen: '+secToTime(examTargetVal)+'</span>'+
-    '<span style="opacity:0.55;">↓ Cuanto más abajo, más rápido</span>';
-
-  const ctx = document.getElementById('evolutionChart').getContext('2d');
-  const gradient = ctx.createLinearGradient(0,0,0,320);
-  gradient.addColorStop(0, 'rgba(240,203,94,0.35)');
-  gradient.addColorStop(1, 'rgba(240,203,94,0.0)');
-
-  const examIdx = chartLabels.indexOf(examLabel);
-
-  const config = {
-    type:'line',
-    data:{
-      labels: chartLabels,
-      datasets:[
-        {
-          label:'Real (equiv. 1000 m)',
-          data: realData,
-          borderColor: '#F0CB5E',
-          backgroundColor: gradient,
-          fill: true,
-          tension:0.25,
-          spanGaps:true,
-          pointRadius:5,
-          pointHoverRadius:7,
-          pointBackgroundColor:'#F0CB5E',
-          pointBorderColor:'rgba(255,255,255,0.9)',
-          pointBorderWidth:1.5,
-          borderWidth:3,
-          order:1
-        },
-        {
-          label:'Objetivo (equiv. 1000 m)',
-          data: plannedData,
-          borderColor:'#9A2E3C',
-          backgroundColor:'rgba(154,46,60,0.08)',
-          fill:false,
-          borderDash:[6,4],
-          tension:0.25,
-          pointRadius:3,
-          pointHoverRadius:5,
-          pointBackgroundColor:'#9A2E3C',
-          borderWidth:2,
-          order:2
-        },
-        {
-          label:'Proyección',
-          data: trendData,
-          borderColor:'rgba(245,242,234,0.85)',
-          backgroundColor:'transparent',
-          fill:false,
-          borderDash:[2,3],
-          tension:0,
-          pointRadius:0,
-          borderWidth:2,
-          spanGaps:true,
-          order:3,
-          hidden: !showTrend
-        }
-      ]
-    },
-    options:{
-      responsive:true,
-      maintainAspectRatio:false,
-      animation:{ duration:900, easing:'easeOutQuart' },
-      interaction:{ mode:'index', intersect:false },
-      scales:{
-        x:{
-          ticks:{ color:'rgba(255,255,255,0.7)', font:{family:'Roboto Mono', size:10}, maxRotation:0, autoSkip:true },
-          grid:{ color:'rgba(255,255,255,0.06)' }
-        },
-        y:{
-          reverse:false,
-          title:{ display:true, text:'Tiempo equivalente 1000 m (mm:ss) — menos es más rápido', color:'rgba(255,255,255,0.55)', font:{family:'Inter', size:10.5} },
-          ticks:{
-            color:'rgba(255,255,255,0.7)', font:{family:'Roboto Mono', size:10},
-            callback:function(v){ return secToTime(v); }
-          },
-          grid:{ color:'rgba(255,255,255,0.06)' }
-        }
-      },
-      plugins:{
-        legend:{ display:false },
-        tooltip:{
-          backgroundColor:'#15294D',
-          borderColor:'#D4AF37',
-          borderWidth:1,
-          titleColor:'#F0CB5E',
-          bodyColor:'#F5F2EA',
-          padding:10,
-          titleFont:{family:'Roboto Mono', size:11},
-          bodyFont:{family:'Inter', size:11.5},
-          callbacks:{
-            title:function(items){
-              const idx = items[0].dataIndex;
-              const m = meta[idx];
-              if(!m) return items[0].label;
-              const base = m.dateStr+' · '+m.titulo+(m.reps>1?(' ('+m.reps+'×'+m.dist+'m)'):'');
-              return m.skipped ? base+' — no realizada' : base;
-            },
-            label:function(item){
-              if(item.raw===null||item.raw===undefined) return null;
-              return item.dataset.label+': '+secToTime(item.raw);
-            },
-            afterBody:function(items){
-              const idx = items[0].dataIndex;
-              const r = realData[idx], p = plannedData[idx];
-              if(r!==null && r!==undefined && p!==null && p!==undefined){
-                const diff = r - p;
-                const sign = diff <= 0 ? '▼ ' : '▲ ';
-                return sign+'Diferencia vs objetivo: '+(diff>=0?'+':'')+diff.toFixed(1)+'s ('+(diff<=0?'más rápido':'más lento')+')';
-              }
-              return '';
-            }
-          }
-        },
-        annotation: examIdx>-1 ? {
-          annotations:{
-            examLine:{
-              type:'line', xMin:examIdx, xMax:examIdx,
-              borderColor:'rgba(127,211,150,0.7)', borderWidth:2, borderDash:[4,4],
-              label:{
-                display:true, content:'Examen · '+secToTime(examTargetVal),
-                position:'start', color:'#7fd396', font:{family:'Roboto Mono', size:10, weight:'bold'},
-                backgroundColor:'rgba(11,31,61,0.9)'
-              }
-            }
-          }
-        } : {}
-      }
-    }
-  };
-
-  if(evoChart){ evoChart.destroy(); }
-  evoChart = new Chart(ctx, config);
-}
-
-/* ==================== EVENTOS ==================== */
-document.getElementById('btnGenerate').addEventListener('click', function(){
-  const sv = document.getElementById('startDate').value;
-  const ev = document.getElementById('examDate').value;
-  const bv = parseTime(document.getElementById('baselineTime').value);
-  const msg = document.getElementById('genMsg');
-  if(!bv){ msg.style.color='var(--granate)'; msg.textContent='Introduce el tiempo de tu test (formato mm:ss, ej. 3:21).'; return; }
-  if(!sv || !ev){ msg.style.color='var(--granate)'; msg.textContent='Faltan fechas.'; return; }
-  CONFIG = {startDate:sv, examDate:ev, baselineTime:bv};
-  TEAM_CONFIG = {startDate:sv, examDate:ev};
-  teamSave(TEAM_CONFIG);
-  PLAN = buildPlan(ACTIVE_PROFILE);
-  if(PLAN.error){ msg.style.color='var(--granate)'; msg.textContent=PLAN.error; renderAll(); return; }
-  msg.style.color='var(--ok)';
-  msg.textContent='Plan generado ✓ (puedes volver a pulsar si cambias fechas o tiempo)';
-  saveToLS();
-  renderAll();
-});
-
-document.getElementById('btnSave').addEventListener('click', function(){
-  const data = JSON.stringify({CONFIG:CONFIG, actuals:actuals, skipped:skipped}, null, 2);
-  const blob = new Blob([data], {type:'application/json'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = 'progreso_pista_'+(ACTIVE_PROFILE||'perfil').toLowerCase()+'.json';
-  document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
-  const m = document.getElementById('saveMsg'); m.textContent='Progreso exportado ✓'; setTimeout(function(){m.textContent='';},2500);
-});
-
-document.getElementById('btnLoadTrigger').addEventListener('click', function(){ document.getElementById('fileLoader').click(); });
-document.getElementById('fileLoader').addEventListener('change', function(e){
-  const file = e.target.files[0]; if(!file) return;
-  const reader = new FileReader();
-  reader.onload = function(ev){
-    try{
-      const p = JSON.parse(ev.target.result);
-      CONFIG = p.CONFIG || CONFIG;
-      actuals = p.actuals || {};
-      skipped = p.skipped || {};
-      if(CONFIG.startDate) document.getElementById('startDate').value = CONFIG.startDate;
-      if(CONFIG.examDate) document.getElementById('examDate').value = CONFIG.examDate;
-      if(CONFIG.baselineTime) document.getElementById('baselineTime').value = secToTime(CONFIG.baselineTime);
-      PLAN = (CONFIG.startDate && CONFIG.examDate && CONFIG.baselineTime) ? buildPlan(ACTIVE_PROFILE) : null;
-      saveToLS(); renderAll();
-      const m = document.getElementById('saveMsg'); m.textContent='Progreso importado ✓'; setTimeout(function(){m.textContent='';},2500);
-    } catch(err){ alert('No se ha podido leer el archivo. Asegúrate de subir el .json exportado desde esta misma página.'); }
-  };
-  reader.readAsText(file);
-});
-
-document.getElementById('btnReset').addEventListener('click', function(){
-  if(confirm('¿Borrar todos los tiempos registrados y las sesiones marcadas como "no realizada" de '+(ACTIVE_PROFILE||'este perfil')+'? Esta acción no se puede deshacer.')){
-    actuals = {};
-    skipped = {};
-    saveToLS();
-    renderAll();
-  }
-});
-
-/* ==================== INICIO ==================== */
-updateOverlayStatus();
+// Función placeholder para renderAll - será llamada cuando se complete la carga
+function renderAll(){}
 </script>
 </body>
 </html>
