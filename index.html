@@ -162,7 +162,7 @@
   .summary-card .item .big{font-family:'Roboto Mono';font-weight:700;font-size:19px;color:var(--gold-bright);display:block;}
   .summary-card .item .lbl{font-size:10.5px;opacity:0.75;letter-spacing:0.05em;text-transform:uppercase;}
   
-  .curve-badge{display:flex;align-items:flex-start;gap:9px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--gray);border-radius:6px;padding:11px 14px;margin-bottom:24px;font-size:12px;color:var(--navy);}
+  .curve-badge{display:flex;align-items:flex-start;gap:9px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--gray);border-radius:6px;padding:11px 14px;margin-bottom:24px;font-size:12px;}
   .curve-badge.curve-on{border-left-color:var(--ok);}
   .curve-badge.curve-off{border-left-color:var(--gold);}
   .curve-badge.anchor-on{border-left-color:var(--speed);background:var(--speed-bg);}
@@ -179,7 +179,7 @@
   .fase-head .fase-desc{font-size:12px;color:var(--gray);margin:0;font-family:'Inter';}
 
   table.weeks{width:100%;border-collapse:collapse;background:#fff;}
-  table.weeks th{text-align:left;font-family:'Oswald';font-size:10.5px;letter-spacing:0.05em;color:var(--navy);background:#ECE7DA;padding:9px 8px;border-bottom:2px solid var(--navy);white-space:nowrap;font-weight:600;}
+  table.weeks th{text-align:left;font-family:'Oswald';font-size:10.5px;letter-spacing:0.05em;color:var(--navy);background:#ECE7DA;padding:9px 8px;border-bottom:2px solid var(--navy);white-space:nowrap;}
   table.weeks td{padding:9px 8px;border-bottom:1px solid var(--line);font-size:13px;vertical-align:middle;}
   table.weeks tr.recalibrated td{background:#FBF6E6;}
   .wk-date{font-family:'Roboto Mono';font-weight:700;color:var(--navy);white-space:nowrap;font-size:12px;}
@@ -197,12 +197,242 @@
   .int-faster{background:var(--speed-bg);color:var(--speed);}
   .int-easier{background:#F0F5EC;color:var(--ok);}
   .int-base{background:#F5EFE0;color:#7A5C1E;}
-  input.time-input{font-family:'Roboto Mono';font-size:13.5px;width:82px;padding:6px 7px;border:1.5px solid var(--line);border-radius:4px;text-align:center;background:#fff;}
-  input.time-input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 2px rgba(212,175,55,0.25);}
+
+  /* ===== ENTRADA MEJORADA DE TIEMPOS ===== */
+  .time-input-enhanced{
+    background:linear-gradient(135deg,#f8f6f0 0%,#fdfbf7 100%);
+    border:2px solid var(--line);
+    border-radius:12px;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .time-input-enhanced.focus{
+    border-color:var(--gold);
+    box-shadow:0 0 0 3px rgba(212,175,55,0.15);
+  }
+
+  .time-display{
+    background:var(--navy);
+    color:var(--gold-bright);
+    font-family:'Roboto Mono';
+    font-size:48px;
+    font-weight:700;
+    text-align:center;
+    padding:20px;
+    border-radius:8px;
+    letter-spacing:2px;
+    min-height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:inset 0 4px 8px rgba(0,0,0,0.3);
+    cursor:text;
+  }
+
+  .time-controls{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+
+  .spinner-group{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+  }
+
+  .spinner-label{
+    font-family:'Oswald';
+    font-size:11px;
+    color:var(--gray);
+    letter-spacing:0.05em;
+    font-weight:600;
+  }
+
+  .spinner{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background:#fff;
+    border:2px solid var(--line);
+    border-radius:8px;
+    overflow:hidden;
+  }
+
+  .spinner-btn{
+    background:var(--navy);
+    color:var(--cream);
+    border:none;
+    width:50px;
+    height:40px;
+    font-size:18px;
+    font-weight:700;
+    cursor:pointer;
+    transition:all 0.1s;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Oswald';
+  }
+
+  .spinner-btn:hover{
+    background:var(--navy-light);
+  }
+
+  .spinner-btn:active{
+    background:var(--granate);
+    transform:scale(0.95);
+  }
+
+  .spinner-input{
+    width:50px;
+    height:50px;
+    border:none;
+    text-align:center;
+    font-family:'Roboto Mono';
+    font-size:24px;
+    font-weight:700;
+    color:var(--navy);
+    padding:0;
+    margin:0;
+  }
+
+  .spinner-input:focus{
+    outline:none;
+    background:#f0f0f0;
+  }
+
+  .spinner-input::-webkit-outer-spin-button,
+  .spinner-input::-webkit-inner-spin-button{
+    -webkit-appearance:none;
+    margin:0;
+  }
+
+  .spinner-input[type=number]{
+    -moz-appearance:textfield;
+  }
+
+  .time-actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .btn-time{
+    font-family:'Oswald';
+    font-size:13px;
+    letter-spacing:0.03em;
+    padding:12px 16px;
+    border-radius:6px;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+    transition:all 0.2s;
+  }
+
+  .btn-time:focus-visible{
+    outline:2px solid currentColor;
+    outline-offset:2px;
+  }
+
+  .btn-time-confirm{
+    background:var(--ok);
+    color:#fff;
+  }
+
+  .btn-time-confirm:hover{
+    background:#4a9a5f;
+  }
+
+  .btn-time-confirm:active{
+    transform:scale(0.98);
+  }
+
+  .btn-time-cancel{
+    background:#fff;
+    color:var(--gray);
+    border:2px solid var(--line);
+  }
+
+  .btn-time-cancel:hover{
+    border-color:var(--gray);
+    color:var(--navy);
+  }
+
+  .btn-quicktime{
+    background:var(--speed-bg);
+    color:var(--speed);
+    border:2px solid var(--speed);
+    font-size:12px;
+    padding:6px 10px;
+  }
+
+  .btn-quicktime:hover{
+    background:var(--speed);
+    color:#fff;
+  }
+
+  .quicktime-group{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:8px;
+  }
+
+  .stopwatch-section{
+    background:var(--speed-bg);
+    border:2px solid var(--speed);
+    border-radius:8px;
+    padding:14px;
+    text-align:center;
+    margin-top:8px;
+  }
+
+  .stopwatch-display{
+    font-family:'Roboto Mono';
+    font-size:32px;
+    font-weight:700;
+    color:var(--speed);
+    margin-bottom:10px;
+  }
+
+  .stopwatch-btns{
+    display:flex;
+    gap:8px;
+    justify-content:center;
+  }
+
+  .btn-stopwatch{
+    font-family:'Oswald';
+    font-size:11px;
+    padding:6px 12px;
+    border:2px solid var(--speed);
+    border-radius:4px;
+    background:#fff;
+    color:var(--speed);
+    cursor:pointer;
+    font-weight:600;
+    transition:all 0.2s;
+  }
+
+  .btn-stopwatch:hover{
+    background:var(--speed);
+    color:#fff;
+  }
+
+  .btn-stopwatch.running{
+    background:var(--granate);
+    border-color:var(--granate);
+    color:#fff;
+  }
+
   .status-tag{font-size:10.5px;font-family:'Oswald';padding:3px 7px;border-radius:3px;letter-spacing:0.03em;white-space:nowrap;font-weight:600;}
   .status-pending{background:#EDEAE0;color:var(--gray);}
   .status-skipped{background:#EDEAE0;color:var(--gray);font-style:italic;}
-  .btn-skip{display:block;margin-top:5px;font-family:'Oswald';font-size:9.5px;letter-spacing:0.03em;padding:2px 7px;border-radius:3px;border:1px solid var(--line);background:#fff;color:var(--gray);cursor:pointer;transition:all 0.15s;font-weight:600;}
+  .btn-skip{display:block;margin-top:5px;font-family:'Oswald';font-size:9.5px;letter-spacing:0.03em;padding:2px 7px;border-radius:3px;border:1px solid var(--line);background:#fff;color:var(--gray);cursor:pointer;transition:all 0.15s;}
   .btn-skip:hover{border-color:var(--granate);color:var(--granate);}
   .btn-skip:focus-visible{outline:2px solid var(--granate);}
   .btn-skip.active{background:var(--granate);color:#fff;border-color:var(--granate);}
@@ -216,7 +446,7 @@
   .recalib-mid{background:#ECE7DA;color:#6E6A60;}
   .trend-arrow{font-size:20px;display:block;}
   .tip-row td{background:var(--tip-bg)!important;padding:0!important;border-bottom:2px solid var(--tip-border)!important;}
-  .tip-toggle{width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:8px 10px;font-family:'Oswald';font-size:11px;color:var(--ok);letter-spacing:0.04em;display:flex;align-items:center;gap:8px;transition:background 0.15s;font-weight:600;}
+  .tip-toggle{width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:8px 10px;font-family:'Oswald';font-size:11px;color:var(--ok);letter-spacing:0.04em;display:flex;align-items:center;gap:8px;font-weight:600;}
   .tip-toggle:hover{background:rgba(60,122,78,0.07);}
   .tip-toggle:focus-visible{outline:2px solid var(--ok);outline-offset:1px;}
   .tip-toggle .tip-arrow{transition:transform 0.2s;display:inline-block;font-style:normal;}
@@ -285,13 +515,15 @@
   @media(max-width:600px){
     table.weeks{font-size:11.5px;}
     table.weeks th,table.weeks td{padding:6px 5px;}
-    input.time-input{width:68px;font-size:12px;}
     .wk-desc{max-width:130px;}
     .profile-cards{flex-direction:column;align-items:center;}
     .profile-card{width:100%;max-width:280px;padding:20px 24px;}
     .motivation-strip{gap:8px;font-size:10px;}
     .profile-bar{flex-direction:column;align-items:flex-start;}
     .evo-canvas-wrap{height:240px;}
+    .time-controls{grid-template-columns:1fr;}
+    .time-display{font-size:36px;}
+    .time-actions{grid-template-columns:1fr;}
   }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" defer></script>
@@ -349,7 +581,7 @@
   <div class="header-inner">
     <span class="lane-tag">CALLE 1 · PISTA</span>
     <h1>Plan de 1.000 m — Escala Básica CNP</h1>
-    <div class="sub">Miércoles: series en pista · Rodajes: resto de la semana · Adaptación automática a tu rendimiento real · v4</div>
+    <div class="sub">Miércoles: series en pista · Rodajes: resto de la semana · Adaptación automática a tu rendimiento real · v5</div>
     <div class="scoreboard" id="scoreboard"></div>
   </div>
   <div class="motivation-strip">
@@ -380,9 +612,34 @@
         <div class="hint">⚠️ Cámbiala en cuanto sepas la convocatoria exacta — el plan se recalcula entero.</div>
       </div>
       <div class="field">
-        <label for="baselineTime">Resultado de tu test de 1.000 m (mm:ss)</label>
-        <input type="text" id="baselineTime" placeholder="ej. 3:21" maxlength="6">
-        <div class="hint">Hazlo a tope, en pista si puedes.</div>
+        <label for="baselineTimeConfig">Tu test de 1.000 m</label>
+        <div class="time-input-enhanced" id="baselineTimeInput">
+          <div class="time-display" id="baselineTimeDisplay">—</div>
+          <div class="time-controls">
+            <div class="spinner-group">
+              <div class="spinner-label">Minutos</div>
+              <div class="spinner">
+                <button class="spinner-btn" onclick="adjustBaselineMin(1)">▲</button>
+                <input type="number" class="spinner-input" id="baselineMin" value="3" min="2" max="5" onchange="updateBaselineDisplay()">
+                <button class="spinner-btn" onclick="adjustBaselineMin(-1)">▼</button>
+              </div>
+            </div>
+            <div class="spinner-group">
+              <div class="spinner-label">Segundos</div>
+              <div class="spinner">
+                <button class="spinner-btn" onclick="adjustBaselineSec(1)">▲</button>
+                <input type="number" class="spinner-input" id="baselineSec" value="21" min="0" max="59" onchange="updateBaselineDisplay()">
+                <button class="spinner-btn" onclick="adjustBaselineSec(-1)">▼</button>
+              </div>
+            </div>
+          </div>
+          <div class="quicktime-group">
+            <button class="btn-quicktime" onclick="setBaselineQuick(310)">5:10</button>
+            <button class="btn-quicktime" onclick="setBaselineQuick(318)">5:18</button>
+            <button class="btn-quicktime" onclick="setBaselineQuick(330)">5:30</button>
+            <button class="btn-quicktime" onclick="setBaselineQuick(340)">5:40</button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="config-actions">
@@ -393,7 +650,7 @@
 
   <div id="waitingMsg" class="waiting">
     <strong>Esperando el resultado de tu test</strong>
-    Vuelve aquí el miércoles 1 de julio de 2026, mete el tiempo que hayas hecho en los 1.000 m arriba y pulsa "Generar plan". A partir de ahí verás el calendario completo hasta el examen con todas las sesiones, objetivos y feedback de tu progreso.
+    Vuelve aquí el miércoles 1 de julio de 2026, corre 1.000 m a tope en pista, ajusta los spinners de arriba con tu tiempo y pulsa "Generar plan". A partir de ahí verás el calendario completo hasta el examen con todas las sesiones adaptadas a tu rendimiento.
   </div>
 
   <div id="summaryContainer"></div>
@@ -448,9 +705,9 @@
   <h3>Notas prácticas</h3>
   <ul>
     <li><strong>Miércoles = pista siempre.</strong> Todos los miércoles son de series. Los rodajes los haces en martes, jueves o cuando puedas. Un rodaje suave de 30 minutos cualquier otro día es suficiente.</li>
-    <li><strong>Emilio tiene sesiones extra (lunes y viernes):</strong> los lunes trabajamos velocidad (series cortas a ritmo rápido) y los viernes resistencia (series largas a ritmo controlado para acumular minutos).</li>
-    <li><strong>Fase 1 rediseñada:</strong> ya no es rodaje continuo. Los miércoles de Fase 1 son series cortas de iniciación al ritmo — así desde el primer día se trabaja con el cronómetro de verdad.</li>
-    <li><strong>Adaptación automática:</strong> cada vez que registras un tiempo real, el plan recalcula todos los objetivos siguientes. Si estás mejorando más de lo previsto, los tiempos objetivo suben; si vas más lento, bajan con cuidado.</li>
+    <li><strong>Emilio tiene sesiones extra (lunes y viernes):</strong> los lunes trabajamos velocidad (series cortas a ritmo rápido) y los viernes resistencia (series largas a ritmo controlado para durar).</li>
+    <li><strong>Fase 1 rediseñada:</strong> ya no es rodaje continuo. Los miércoles de Fase 1 son series cortas de iniciación al ritmo — así desde el primer día se trabaja con el cronómetro en la mano.</li>
+    <li><strong>Adaptación automática:</strong> cada vez que registras un tiempo real, el plan recalcula todos los objetivos siguientes. Si estás mejorando más de lo previsto, los tiempos objetivo bajan.</li>
     <li><strong>Ritmos ajustados por distancia:</strong> las series cortas se corren más rápido que el ritmo de examen. El plan calcula el ritmo específico para cada distancia.</li>
     <li><strong>Columna "Equiv. 1000 m":</strong> el ritmo equivalente en 1000 m te dice a qué nivel estás trabajando realmente. Sirve para comparar todas las sesiones en la misma unidad.</li>
     <li><strong>La nota orientativa</strong> usa el baremo oficial de 1.000 m por tramos enteros (Hombres): 2'54" o menos = 10, hasta 3'49" o más = 0, en escalones de 1 punto cada ~5-6 segundos.</li>
@@ -589,7 +846,13 @@ function selectProfile(profile){
     applyTeamDates(team);
     if(CONFIG.startDate) document.getElementById('startDate').value = CONFIG.startDate;
     if(CONFIG.examDate) document.getElementById('examDate').value = CONFIG.examDate;
-    if(CONFIG.baselineTime) document.getElementById('baselineTime').value = secToTime(CONFIG.baselineTime);
+    if(CONFIG.baselineTime){
+      const m = Math.floor(CONFIG.baselineTime / 60);
+      const s = Math.round(CONFIG.baselineTime % 60);
+      document.getElementById('baselineMin').value = m;
+      document.getElementById('baselineSec').value = s;
+      updateBaselineDisplay();
+    }
     PLAN = (CONFIG.startDate && CONFIG.examDate && CONFIG.baselineTime) ? buildPlan(ACTIVE_PROFILE) : null;
 
     document.getElementById('profileOverlay').style.display = 'none';
@@ -628,7 +891,13 @@ function refreshActiveProfile(){
     applyTeamDates(team);
     if(CONFIG.startDate) document.getElementById('startDate').value = CONFIG.startDate;
     if(CONFIG.examDate) document.getElementById('examDate').value = CONFIG.examDate;
-    if(CONFIG.baselineTime) document.getElementById('baselineTime').value = secToTime(CONFIG.baselineTime);
+    if(CONFIG.baselineTime){
+      const m = Math.floor(CONFIG.baselineTime / 60);
+      const s = Math.round(CONFIG.baselineTime % 60);
+      document.getElementById('baselineMin').value = m;
+      document.getElementById('baselineSec').value = s;
+      updateBaselineDisplay();
+    }
     PLAN = (CONFIG.startDate && CONFIG.examDate && CONFIG.baselineTime) ? buildPlan(ACTIVE_PROFILE) : null;
     renderAll();
     if(el){
@@ -655,7 +924,7 @@ let actuals = {};
 let skipped = {};
 let PLAN = null;
 
-/* ==================== UTILIDADES DE TIEMPO ==================== */
+/* ==================== UTILIDADES DE TIEMPO ===== */
 function parseTime(str){
   if(!str) return null;
   str = str.trim().replace(',','.');
@@ -667,6 +936,7 @@ function parseTime(str){
   }
   const v=parseFloat(str); return isNaN(v)?null:v;
 }
+
 function secToTime(sec){
   if(sec===null||sec===undefined||isNaN(sec)) return '—';
   const totalDeci=Math.round(sec*10);
@@ -675,20 +945,62 @@ function secToTime(sec){
   const sStr=s<10?'0'+s.toFixed(1):s.toFixed(1);
   return m+':'+sStr.replace('.0','');
 }
+
 function paceToTime(sec){
   const total=Math.round(sec);
   const m=Math.floor(total/60), s=total-m*60;
   return m+':'+(s<10?'0':'')+s;
 }
+
 function fmtDate(d){
   const dias=['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
   const meses=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
   return dias[d.getDay()]+' '+d.getDate()+' '+meses[d.getMonth()];
 }
+
 function addDays(date,days){ const d=new Date(date); d.setDate(d.getDate()+days); return d; }
 
-// Función placeholder para renderAll - será llamada cuando se complete la carga
+/* ==================== ENTRADA DE TIEMPOS MEJORADA ===== */
+function updateBaselineDisplay(){
+  const m = parseInt(document.getElementById('baselineMin').value) || 3;
+  const s = parseInt(document.getElementById('baselineSec').value) || 0;
+  const display = m + ':' + (s < 10 ? '0' : '') + s;
+  document.getElementById('baselineTimeDisplay').textContent = display;
+}
+
+function adjustBaselineMin(delta){
+  const el = document.getElementById('baselineMin');
+  let val = parseInt(el.value) + delta;
+  val = Math.max(2, Math.min(5, val));
+  el.value = val;
+  updateBaselineDisplay();
+}
+
+function adjustBaselineSec(delta){
+  const el = document.getElementById('baselineSec');
+  let val = parseInt(el.value) + delta;
+  if(val < 0) val = 59;
+  if(val > 59) val = 0;
+  el.value = val;
+  updateBaselineDisplay();
+}
+
+function setBaselineQuick(seconds){
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  document.getElementById('baselineMin').value = m;
+  document.getElementById('baselineSec').value = s;
+  updateBaselineDisplay();
+}
+
+// Función placeholder para renderAll
 function renderAll(){}
+
+// Inicialización
+document.addEventListener('DOMContentLoaded', function(){
+  updateBaselineDisplay();
+  updateOverlayStatus();
+});
 </script>
 </body>
 </html>
